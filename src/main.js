@@ -179,8 +179,8 @@ const state = {
   occasion: "All",
   sort: "Featured",
   visible: 6,
-  cart: JSON.parse(localStorage.getItem("raamya-cart") || "[]"),
-  wishlist: JSON.parse(localStorage.getItem("raamya-wishlist") || "[]"),
+  cart: JSON.parse(localStorage.getItem("kacheri-cart") || "[]"),
+  wishlist: JSON.parse(localStorage.getItem("kacheri-wishlist") || "[]"),
   selectedProductId: null,
   selectedGalleryIndex: 0,
   selectedTab: "Description",
@@ -197,8 +197,8 @@ function formatPrice(value) {
 }
 
 function saveState() {
-  localStorage.setItem("raamya-cart", JSON.stringify(state.cart));
-  localStorage.setItem("raamya-wishlist", JSON.stringify(state.wishlist));
+  localStorage.setItem("kacheri-cart", JSON.stringify(state.cart));
+  localStorage.setItem("kacheri-wishlist", JSON.stringify(state.wishlist));
 }
 
 function getCartCount() {
@@ -298,9 +298,9 @@ function header() {
   const routes = ["home", "shop", "about", "contact"];
   return `
     <header class="site-header">
-      <a class="brand" href="#" data-route="home" aria-label="Raamya home">
-        <span>R</span>
-        <strong>Raamya</strong>
+      <a class="brand" href="#" data-route="home" aria-label="Kacheri Sarees home">
+        <span>K</span>
+        <strong>Kacheri Sarees</strong>
       </a>
       <button class="menu-button" data-action="toggle-menu" aria-label="Open menu">Menu</button>
       <nav class="${state.mobileMenu ? "open" : ""}" aria-label="Main navigation">
@@ -320,9 +320,9 @@ function homePage() {
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="section-label">Copper silk edit &middot; Handcrafted heirlooms</p>
-          <h1>Raamya</h1>
-          <p>Not a saree, but a statement. Discover copper-toned silks, festive drapes, and jewellery made for graceful entrances.</p>
+          <p class="section-label">Mumbai atelier &middot; Handcrafted heirlooms</p>
+          <h1>Kacheri Sarees</h1>
+          <p>Handcrafted sarees and jewellery selected for ceremonies, festivals, and graceful everyday rituals.</p>
           <div class="hero-actions">
             <button class="solid-button" data-route="shop">Shop Collection</button>
             <button class="ghost-button" data-route="about">Our Story</button>
@@ -331,7 +331,7 @@ function homePage() {
         <div class="hero-media">
           <img src="${products[0].image}" alt="Woman wearing a yellow silk saree and jewellery" />
           <div class="hero-card">
-            <strong>Statement edit</strong>
+            <strong>Festive edit</strong>
             <span>Burnished silks, temple jewellery, and hand-finished keepsakes.</span>
           </div>
         </div>
@@ -375,7 +375,7 @@ function homePage() {
       <section class="story-band">
         <img src="${products[1].image}" alt="Ivory handcrafted saree with gold jewellery" loading="lazy" />
         <div>
-          <p class="section-label">The Raamya promise</p>
+          <p class="section-label">The Kacheri Sarees promise</p>
           <h2>Every drape is selected with the maker in mind.</h2>
           <p>We work with craft clusters and finishing specialists around India, then curate each saree and ornament from our Mumbai studio for fit, finish, and longevity.</p>
           <button class="ghost-button" data-route="about">Meet the artisans</button>
@@ -398,7 +398,7 @@ function shopPage() {
   return `
     <main>
       <section class="page-hero compact">
-      <p class="section-label">Shop Raamya</p>
+      <p class="section-label">Shop Kacheri Sarees</p>
         <h1>Browse sarees and jewellery</h1>
       </section>
       <section class="filter-bar">
@@ -444,17 +444,17 @@ function aboutPage() {
     <main>
       <section class="page-hero about-hero">
         <div>
-          <p class="section-label">About Raamya</p>
+          <p class="section-label">About Kacheri Sarees</p>
           <h1>Heritage craft, edited for today.</h1>
         </div>
         <img src="${products[2].image}" alt="Festive saree portrait" />
       </section>
       <section class="story-band reverse">
-        <img src="${products[0].image}" alt="Raamya silk saree styling" loading="lazy" />
+        <img src="${products[0].image}" alt="Kacheri Sarees silk saree styling" loading="lazy" />
         <div>
           <p class="section-label">Origin</p>
           <h2>Built from Mumbai, shaped by Indian craft networks.</h2>
-          <p>Raamya began as a private curation service for wedding families and festive wardrobes. The storefront keeps that personal eye while making the experience smoother, searchable, and ready for gifting.</p>
+          <p>Kacheri Sarees began as a private curation service for wedding families and festive wardrobes. The storefront keeps that personal eye while making the experience smoother, searchable, and ready for gifting.</p>
         </div>
       </section>
       <section class="section-shell">
@@ -489,7 +489,7 @@ function contactPage() {
           <p class="form-status" id="contactStatus"></p>
         </form>
         <aside class="contact-cards">
-          <article><strong>Email</strong><span>hello@raamya.in</span></article>
+          <article><strong>Email</strong><span>hello@kacherisarees.in</span></article>
           <article><strong>Phone</strong><span>+91 72086 98768</span></article>
           <article><strong>WhatsApp</strong><span>Personal styling and order support</span></article>
           <article><strong>Studio</strong><span>Bandra West, Mumbai</span></article>
@@ -508,7 +508,7 @@ function contactPage() {
 function newsletter() {
   return `
     <section class="newsletter">
-      <p class="section-label">Raamya letters</p>
+      <p class="section-label">Kacheri Sarees letters</p>
       <h2>New drapes, artisan notes, and private sale previews.</h2>
       <form data-form="newsletter">
         <input type="email" required placeholder="Email address" aria-label="Email address" />
@@ -630,7 +630,7 @@ function render() {
     ${cartDrawer()}
     ${productModal()}
     <footer class="site-footer">
-      <strong>Raamya</strong>
+      <strong>Kacheri Sarees</strong>
       <span>Handcrafted sarees and jewellery &middot; Mumbai</span>
     </footer>
   `;
@@ -723,7 +723,7 @@ document.addEventListener("submit", (event) => {
   if (!form) return;
   event.preventDefault();
   const status = form.dataset.form === "contact" ? document.querySelector("#contactStatus") : document.querySelector("#newsletterStatus");
-  if (status) status.textContent = form.dataset.form === "contact" ? "Thanks. The studio will reply shortly." : "You are on the Raamya list.";
+  if (status) status.textContent = form.dataset.form === "contact" ? "Thanks. The studio will reply shortly." : "You are on the Kacheri Sarees list.";
   form.reset();
 });
 
