@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.chrome-verify*/
+verification-*.png
+.codex-temp/
+.vercel/

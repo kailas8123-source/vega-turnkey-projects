@@ -1,0 +1,14 @@
+{
+  "name": "kacheri-sarees",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

@@ -1,0 +1,14 @@
+.codex-temp
+.git
+node_modules
+artifacts
+desi-lebanese-bbq
+docs
+flipbook-dbk
+rebuild-you
+roots-routes
+samurai-site
+vendor
+public/assets
+public/models
+codex-retained-deployment-summary.md
