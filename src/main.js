@@ -186,6 +186,21 @@ const articles = [
   },
 ];
 
+const paymentOptions = [
+  { id: "visa", label: "Visa" },
+  { id: "mastercard", label: "Mastercard" },
+  { id: "bank", label: "Bank Transfer" },
+  { id: "mamo", label: "Mamo Pay" },
+  { id: "stripe", label: "Stripe" },
+];
+
+const socialLinks = [
+  { id: "facebook", label: "Facebook", href: "https://www.facebook.com/share/jyn5NjY3ZyK2E6kx/?mibextid=LQQJ4d" },
+  { id: "x", label: "X", href: "https://x.com/VEGADUBAI" },
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/thevegauae/?hl=en" },
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/the-vega-turnkey-projects-llc/" },
+];
+
 const serviceFeatures = [
   { icon: "verified", image: images.gdsQuality, title: "Quality products", text: "Commercial-grade materials, heavy-duty construction, and anti-rust bunk-bed finishes designed for demanding accommodation use." },
   { icon: "local_shipping", image: images.gdsDelivery, title: "Supply, delivery & install", text: "From product selection to supply, delivery, and installation, Vega keeps project execution coordinated and clear." },
@@ -672,6 +687,64 @@ function articleCard(article) {
   `;
 }
 
+function socialIcon(id) {
+  const icons = {
+    facebook: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.6h2.1V5.2c-.4-.1-1.6-.2-3-.2-3 0-5.1 1.8-5.1 5.3v2.9H5v3.8h3.2V24h3.9v-7h3.3l.5-3.8h-3.8v-2.5c0-1.1.3-2.1 2.1-2.1Z"/></svg>`,
+    x: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 10.3 21 2h-2.1l-6 6.9L8.1 2H2l7.6 10.8L2 22h2.1l6.5-7.6 5.2 7.6H22l-8.2-11.7Zm-2.3 2.6-.8-1.1-6.1-8.2h2.5l4.7 6.3.8 1.1 6.4 8.7h-2.5l-5-6.8Z"/></svg>`,
+    instagram: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/><circle cx="17.3" cy="6.8" r="1"/></svg>`,
+    linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.7 8.9H3.1V21h3.6V8.9ZM4.9 3C3.8 3 3 3.8 3 4.8s.8 1.9 1.9 1.9 1.9-.8 1.9-1.9S6 3 4.9 3Zm16 10.9c0-3.4-1.8-5.2-4.4-5.2-2 0-2.9 1.1-3.4 1.9V8.9H9.6V21h3.6v-6.1c0-1.6.3-3.1 2.2-3.1s1.9 1.8 1.9 3.2v6h3.6v-7.1Z"/></svg>`,
+  };
+
+  return icons[id] || "";
+}
+
+function paymentBadge(option) {
+  if (option.id === "mastercard") {
+    return `
+      <div class="payment-card payment-mastercard" aria-label="${option.label}">
+        <span class="mastercard-mark"><i></i><i></i></span>
+        <span>Mastercard</span>
+      </div>
+    `;
+  }
+
+  if (option.id === "bank") {
+    return `
+      <div class="payment-card payment-bank" aria-label="${option.label}">
+        ${icon("account_balance")}
+        <span>Bank<br />Transfer</span>
+      </div>
+    `;
+  }
+
+  if (option.id === "mamo") {
+    return `
+      <div class="payment-card payment-mamo" aria-label="${option.label}">
+        <span class="mamo-mark"></span>
+        <span>Mamo Pay</span>
+      </div>
+    `;
+  }
+
+  return `<div class="payment-card payment-${option.id}" aria-label="${option.label}"><span>${option.label}</span></div>`;
+}
+
+function footerTrust() {
+  return `
+    <div class="footer-trust">
+      <span>Secure Payment Options</span>
+      <div class="payment-grid">
+        ${paymentOptions.map(paymentBadge).join("")}
+      </div>
+      <span>Social Media</span>
+      <div class="social-row">
+        ${socialLinks.map((link) => `<a href="${link.href}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${link.label}" data-social="${link.id}">${socialIcon(link.id)}</a>`).join("")}
+      </div>
+      <form class="footer-form" data-form><span>Project Updates</span><div><input aria-label="Email" required type="email" placeholder="Email address" /><button>${icon("arrow_forward")}</button></div></form>
+    </div>
+  `;
+}
+
 function footer() {
   return `
     <footer class="site-footer">
@@ -679,7 +752,7 @@ function footer() {
         <div><img class="footer-logo" src="${images.gdsLogo}" alt="The Vega Turnkey Projects LLC" /><strong>Vega Turnkey</strong><p>GDS-UAE supplier of labour-camp furniture, bunk beds, staff accommodation equipment, hotel supplies, queue barriers, flag poles, waste bins, PPE, and safety equipment.</p></div>
         <div><span>Products</span><button data-route="catalog">Camp Furniture</button><button data-route="catalog">Queue Barriers</button><button data-route="catalog">Waste Bins</button><button data-route="catalog">Hotels & Events</button><button data-route="catalog">Safety & PPE</button></div>
         <div><span>Company</span><button data-route="mission">About Us</button><button data-route="blog">Blog</button><button data-open-quote>Contact Support</button></div>
-        <form class="footer-form" data-form><span>Project Updates</span><div><input aria-label="Email" required type="email" placeholder="Email address" /><button>${icon("arrow_forward")}</button></div></form>
+        ${footerTrust()}
       </div>
       <div class="container footer-bottom"><span>(c) 2026 Vega Turnkey Projects LLC. sales@thevegauae.com</span><span>Privacy Policy - Terms of Service</span></div>
     </footer>
