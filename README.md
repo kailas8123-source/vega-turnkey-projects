@@ -23,6 +23,7 @@ The site uses the Vega visual system from the template: Josefin Sans typography,
 Official GDS-UAE logo, product category photos, service icons, and catalogue previews were mirrored into:
 
 ```text
+assets/gds/
 public/assets/gds/
 ```
 

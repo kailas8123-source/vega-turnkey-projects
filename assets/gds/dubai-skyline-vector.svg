@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 360" role="img" aria-label="Dubai skyline vector">
+  <path fill="#f4ead7" d="M0 309h1440v51H0z"/>
+  <path fill="#f4ead7" d="M69 277h44v32H69zM119 242h70v67h-70zM136 218h36v24h-36zM206 262h54v47h-54zM276 230h52v79h-52zM343 198h70v111h-70zM360 172h16v26h-16zM384 158h14v40h-14zM432 252h52v57h-52zM502 210h58v99h-58zM580 256h76v53h-76z"/>
+  <path fill="#f4ead7" d="M690 309h62V162l-7-18h-12l-7-37-7 37h-12l-7 18zM719 39h14v72h-14zM724 12h4v30h-4zM707 181h28v128h-28z"/>
+  <path fill="#f4ead7" d="M782 246h70v63h-70zM798 211h38v35h-38zM866 166c35 10 57 42 57 84v59h-91v-59c0-43 10-72 34-84zm18 37c-14 13-21 31-21 55v51h43v-51c0-24-7-42-22-55z"/>
+  <path fill="#f4ead7" d="M944 239h58v70h-58zM961 203h24v36h-24zM1024 180h64v129h-64zM1038 157h13v23h-13zM1062 136h13v44h-13zM1111 248h42v61h-42zM1170 215h72v94h-72zM1188 188h36v27h-36zM1264 238h63v71h-63zM1282 214h26v24h-26zM1347 269h48v40h-48z"/>
+  <path fill="none" stroke="#f4ead7" stroke-linecap="round" stroke-linejoin="round" stroke-width="14" d="M70 309c96-34 194-37 294-11 86 22 163 18 242-13 84-33 176-32 264-2 109 37 218 32 320-15 64-30 130-35 198-13"/>
+  <path fill="#f4ead7" d="M55 309h1330v13H55z"/>
+</svg>
