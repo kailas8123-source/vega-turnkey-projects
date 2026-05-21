@@ -9,6 +9,12 @@ rebuild-you
 roots-routes
 samurai-site
 vendor
-public/assets
+public/assets/*
+!public/assets/gds/
+!public/assets/gds/**
+!public/assets/vega/
+public/assets/vega/*
+!public/assets/vega/references/
+!public/assets/vega/references/**
 public/models
 codex-retained-deployment-summary.md
