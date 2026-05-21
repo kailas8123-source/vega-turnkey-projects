@@ -1,739 +1,820 @@
-const imageBase = "https://images.pexels.com/photos";
-
-const products = [
-  {
-    id: "kanjeevaram-sunrise",
-    name: "Kanjeevaram Sunrise Silk Saree",
-    category: "Sarees",
-    fabric: "Silk",
-    occasion: "Wedding",
-    price: 18900,
-    oldPrice: 22900,
-    rating: 4.9,
-    badge: "Bestseller",
-    color: "Marigold",
-    material: "Pure silk",
-    image: `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    gallery: [
-      `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "A luminous silk drape with zari borders, made for ceremonial mornings and intimate festive evenings.",
-  },
-  {
-    id: "ivory-zari-drape",
-    name: "Ivory Zari Handloom Saree",
-    category: "Sarees",
-    fabric: "Handloom",
-    occasion: "Festive",
-    price: 12950,
-    oldPrice: 14950,
-    rating: 4.8,
-    badge: "New",
-    color: "Ivory",
-    material: "Cotton silk",
-    image: `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    gallery: [
-      `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "An airy ivory handloom piece finished with soft gold detailing and a poised, heirloom feel.",
-  },
-  {
-    id: "gulabi-paithani",
-    name: "Gulabi Paithani Celebration Saree",
-    category: "Sarees",
-    fabric: "Silk",
-    occasion: "Festive",
-    price: 16900,
-    oldPrice: 19900,
-    rating: 4.7,
-    badge: "Sale",
-    color: "Rose",
-    material: "Silk blend",
-    image: `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    gallery: [
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "A vivid rose and saffron saree with festive contrast borders and a confident celebratory silhouette.",
-  },
-  {
-    id: "temple-necklace",
-    name: "Temple Gold Necklace Set",
-    category: "Jewellery",
-    fabric: "Gold plated",
-    occasion: "Wedding",
-    price: 7800,
-    oldPrice: 9200,
-    rating: 4.9,
-    badge: "Trending",
-    color: "Antique gold",
-    material: "Gold plated brass",
-    image: `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    gallery: [
-      `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "A layered temple-inspired set designed to sit beautifully against silk borders and bridal blouses.",
-  },
-  {
-    id: "meenakari-earrings",
-    name: "Meenakari Drop Earrings",
-    category: "Jewellery",
-    fabric: "Meenakari",
-    occasion: "Daily",
-    price: 2450,
-    oldPrice: 0,
-    rating: 4.6,
-    badge: "New",
-    color: "Ruby",
-    material: "Enamel and brass",
-    image: `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    gallery: [
-      `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "Lightweight enamel earrings with jewel-toned detail for repeat wear beyond wedding wardrobes.",
-  },
-  {
-    id: "banarasi-maroon",
-    name: "Banarasi Maroon Heirloom Saree",
-    category: "Sarees",
-    fabric: "Banarasi",
-    occasion: "Wedding",
-    price: 21400,
-    oldPrice: 25800,
-    rating: 5,
-    badge: "Limited",
-    color: "Maroon",
-    material: "Banarasi silk",
-    image: `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900&sat=-35`,
-    gallery: [
-      `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900&sat=-35`,
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "A rich maroon Banarasi saree with ceremonial weight, designed as a future family keepsake.",
-  },
-  {
-    id: "sage-linen-saree",
-    name: "Sage Linen Saree",
-    category: "Sarees",
-    fabric: "Linen",
-    occasion: "Daily",
-    price: 6950,
-    oldPrice: 0,
-    rating: 4.5,
-    badge: "Conscious",
-    color: "Sage",
-    material: "Linen cotton",
-    image: `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900&sat=-45`,
-    gallery: [
-      `${imageBase}/37054325/pexels-photo-37054325.jpeg?auto=compress&cs=tinysrgb&w=900&sat=-45`,
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "A breathable everyday drape with soft hand-feel, quiet color, and hand-finished edges.",
-  },
-  {
-    id: "pearl-choker",
-    name: "Pearl Polki Choker",
-    category: "Jewellery",
-    fabric: "Polki",
-    occasion: "Festive",
-    price: 5400,
-    oldPrice: 6400,
-    rating: 4.8,
-    badge: "Bestseller",
-    color: "Pearl",
-    material: "Polki and pearls",
-    image: `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    gallery: [
-      `${imageBase}/9419251/pexels-photo-9419251.jpeg?auto=compress&cs=tinysrgb&w=900`,
-      `${imageBase}/28054615/pexels-photo-28054615.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    ],
-    description:
-      "A close-set festive choker that frames the neckline without overpowering the saree.",
-  },
-];
-
-const artisans = [
-  ["Meera Joshi", "Banarasi finishing", "24 years"],
-  ["Rekha Pawar", "Zari inspection", "18 years"],
-  ["Nasreen Khan", "Jewellery setting", "15 years"],
-];
-
-const state = {
-  route: "home",
-  category: "All",
-  fabric: "All",
-  occasion: "All",
-  sort: "Featured",
-  visible: 6,
-  cart: JSON.parse(localStorage.getItem("kacheri-cart") || "[]"),
-  wishlist: JSON.parse(localStorage.getItem("kacheri-wishlist") || "[]"),
-  selectedProductId: null,
-  selectedGalleryIndex: 0,
-  selectedTab: "Description",
-  cartOpen: false,
-  mobileMenu: false,
+const images = {
+  hero:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuAv-B9fFKVXdPLvk2wcBDSvSrDfsvVEUko3zXFVLpxAW7sPwsqPZ0EGHzzqVXygCI_wYg1qgC6ZDec_Am0tPKmpyZze-YirU0VtH-8NfDMGIhdStJ3xQBP_0AZZ3VyoyQ3VPk6jooJXUg7slWr6u6dyk8RyK48D1CJQRKItHeLqRkUhNxXNqWGcayeVzdW3Ht-X2tn1rNC4XCvpxs2Pj7BXYR5KZ2qaMbUo6g5M-vIPwqidtmqq5E1ds4FeEr20xldrJXL8E6L6mWNn",
+  camp:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBAfNqEH2BtwHFKVY_OI1ukDQjAawP9eXZhac_sSli9QVqxe9QVtkU15RB4J3Nj8Ke59PX4qgn7YjhT9k0GXyvmJ3uWnIJBAGESfHV0gxUZNHjq2LJ8f9OBPshVpv-T-1Uudggzw0ENL5aLbmAm6XN0eQpXvNi0VsFOMNOkOmRj5JahvjHT9pVsh9WZJ2N3dpcgEErkmyXTodJQwQXrpo22yHzjZe0a-SH1ND2QwXD2I1c1rQqYSG64p81axR6lnovM--9fhym_ImMc",
+  queue:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuC_UNokX7iMFspcF2ELkmUGxjWVsKg6lUNwNsRJHh14nYt1b4aV1KTjiSRwjIHytJbGbZ-7RtP6BKNYq8qb0ztWBykl9vpkYrBf8nG3sgKO-0EQM7t3uY4dE0b_ijZwMvgdI-QZG4KGaF6Ixm6aXnb-P5nZLcyxYlnDV7xhyPWveb6LUB0030fxJRWI5oVEWxvTmTngkvRbmZraeO5lW1q3PRxK6WRQ3xyTxAlBAMBB7MKhp9UXO1Ol-9dzsDjWwb3A31HVblRQyEhk",
+  waste:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuDYDqtoBlqbcIVWjCYOGJtPQwgLh4ZnOnwaYzVCtObLW0F5eG612Padk4Y46wxPtNGrNMhC6TP8eEPYlnzOeuUhsi3yhiPQutYWrCYLZEFZKU1Fu91KeTXF7Ie-FW-UPgDZ6aB6FX4C1hKaOS62YJnmmUJvQCxSo6ZCkmdhJnZlDn7GbflQ6btBd9GRmcu4pNVkm2cxrl9WFdJM6z5J_mFjgBWWIpNoYvBZO5T39RIfm8n_tMFDkOUcxDgAWPvG83iwCWzzVDCPqiQ2",
+  events:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuCerqtkMK57r3PvfwN1OldZN0Zw__ne7YFSRtvDRD7xm13oBdXY5rJSAHLcV_riJCn3T2K8X7voteEHePzg_qWjO9t6bUHD-YGjHK4mflE8nRSqFoZLRSjAxkLQ3S20MBiICOwJB6D9sD-dOFRdz22HZa0eQGWfTsNQmtfTi_cjGcndSLHKDQkHMDl5ZUTH2uGW5i-wcO75vvB65pCCu0gKxroIxAVYjF56JMXCRvUz_mLC116gc8H7fiQRY-_DfiFo1ADGhvOrpe8n",
+  logistics:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBt6DPgDn8jtgP9tjIdVvDLCp5YuK-8tnik_EpEG2TVPi9eps-C7JiD3gX9Xy5jFfjHzS5b_zqQE-e2Q0g3haE2xe7V5PQ7eh_ME_k47UgSAjVL-_vVZa9Ya59iBMguyTt8JUMlEHZgTQCRuEeWkCMeq_lyBv3qWiq84h_4l5Pk1b8IiEfra1mhu9ylAlokBvHaEPRpB0oTHM64QUTTokCRXF_ie39C5m13F6gZYxP-Kwo4fp9mQO6sUustBI6EyfJW_jyvvGdjrpRX",
+  article:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBoslymSEROe_VuUDrtQHBtioDc_Ijte9fn2WDW-YwOQcS0gg9N_ERCEBxfmDOYUOdQUjG9a1uXvPL7OolMSQNHQyLgvYRDr7h34RdrXx1jK6SaPagG2rlOrdIQIgz_uZllQS-cij57As8SQMLvslh1PS-zZzWeF3c6EU5xOQY0B0LDdXt7lVfiZFsk_m_fc-n7RB-tRmx1u5iTiwI4tjiYpUmqXc4EIBzvs8fkKq9OY8feztLkYVD6KyaXh4sjCVw-_4Bvc-1AWwo0",
+  sustainability:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuA9Ok6v79AX9JIoV_ITfB-jZ6qVuCCnWqkMQVBlCDWoFCJ9NYbcPA2NuUCLxgNrCvQcLBjK4hFg7ROrYqMItcqhsba0FkR-9dOLWkoCj-IC4K677jf0yvUswqnXnHORy12ACcCueK9XhoNtiKd_pPDxSpqx_T-3B2szH_0rBVCk6igAhxUt8lwlVOF2oXxyhb15TRHSXiFUpCjneu3CFVNk1et-PMeWR6n7qIrjr80k-vY2RQRoOclnhR3-_B7zO8VEKoZo1Pp3hJjr",
+  stanchions:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBYhQ6yw2y8-dQyU3QvVPZBrk3DnWAIqc-GDXW3REaTd7khGPUt2vivPYqf9Y7Pb1PYtPkqMaLGHHn77N4_J4URGhkRBE3vPLXOPq-wxTfROAYdST4x99_O1iis970yLP8zq2EbGd_Wxlx5ZYxEe5riGH_8avdhZHHE-orHqmWSLx4IAUagsOQUuOvNK-JAmEuxeGDREvuuU4qHLzwzIzqjHRGOkoNWnFjEmp0Qc1sPhxTn4mJZg-PA9RboAlXuYpdfrfAekDszofjY",
+  urban:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuB9fzBRt7BEDK-MHB6mvntHhPX5vpcbm0_hgrMl8NeUn5-nk800pISNsLRwAM0L9PWd1UZ1Ai8vvcffIqrpEEGeK-ROs-PfNk0-iPxEwq3iSkV3t-DFiaguk6rFuY4yvEm5Xqfr4mfDsTIVOHRZnQY05D34PR7ir18h9EftYKgyL1SnFWTkHaXxOtWENhrdpOoYzcitv_mQ_At8awVO_r18zOQ9IB0l_ZlI_sg-gqijtQ56SjddwvnAkJjeFviT8Q7VfzMMXLD5Qjoe",
+  gdsLogo: "/assets/gds/vega-gds-logo.png",
+  gdsBunkBeds: "/assets/gds/steel-bunk-beds.webp",
+  gdsWasteBins: "/assets/gds/waste-bins.webp",
+  gdsQueue: "/assets/gds/queue-stanchions-flag-poles.webp",
+  gdsCatalog1: "/assets/gds/vega-catalog-page-1.jpg",
+  gdsCatalog2: "/assets/gds/vega-catalog-page-2.jpg",
+  gdsQuality: "/assets/gds/quality.png",
+  gdsDelivery: "/assets/gds/delivery.png",
+  gdsCommitment: "/assets/gds/commitment.png",
 };
 
-function formatPrice(value) {
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
+const coverageCities = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain", "GCC dispatch"];
 
-function saveState() {
-  localStorage.setItem("kacheri-cart", JSON.stringify(state.cart));
-  localStorage.setItem("kacheri-wishlist", JSON.stringify(state.wishlist));
-}
+const navItems = [
+  ["catalog", "Products"],
+  ["mission", "About Us"],
+  ["catalog", "Safety & PPE", "Safety Equipment"],
+  ["insights", "Insights"],
+];
 
-function getCartCount() {
-  return state.cart.reduce((sum, item) => sum + item.qty, 0);
-}
+const categories = [
+  {
+    key: "camp",
+    title: "Camp Furniture & Appliances",
+    tag: "Labour Camp",
+    icon: "deck",
+    material: "Camp Furniture",
+    image: images.camp,
+    sourceImage: images.gdsBunkBeds,
+    description:
+      "A complete range of staff accommodation furniture in Dubai, built for durability, comfort, and fast deployment across UAE and GCC labour camps.",
+    points: ["Steel and wooden bunk beds with anti-rust finishes", "Medicated mattresses, bedding, pillows, and linens", "Steel lockers, cabinets, office furniture, and appliances"],
+    items: ["Bunk Bed", "Single Bed", "Steel Locker & Cabinet", "Mattress", "Blanket, Pillow & Bedsheet", "Office Furniture", "Appliances & Accessories", "Plastic Furniture", "Shoe Shining and Polishing Machines"],
+    seo: "staff accommodation furniture Dubai, labour camp furniture supplier, bunk bed supplier UAE",
+    cta: "Explore Camp Range",
+  },
+  {
+    key: "queue",
+    title: "Queue Stanchions & Flag Poles",
+    tag: "Crowd Control",
+    icon: "stadium",
+    material: "Queue Systems",
+    image: images.queue,
+    sourceImage: images.gdsQueue,
+    description:
+      "Queue barriers, VIP poles, rope barriers, flag poles, sign boards, and information stands for events, retail, hotels, and public venues.",
+    points: ["Retractable barriers and VIP posts in multiple finishes", "Indoor and outdoor flag poles in aluminium and steel", "Police barriers, traffic barriers, and guided signage"],
+    items: ["Flag Poles", "Retractable Barriers", "Police Barriers", "Ropes", "VIP Poles", "Sign Boards", "Traffic Barriers", "Metal Barriers", "Information Stands"],
+    seo: "queue barriers Dubai, flag pole suppliers UAE, crowd control stanchions",
+    cta: "View Designs",
+  },
+  {
+    key: "waste",
+    title: "Waste Bins & Recycling Solutions",
+    tag: "Sustainable",
+    icon: "delete",
+    material: "Waste Bins",
+    image: images.waste,
+    sourceImage: images.gdsWasteBins,
+    description:
+      "Indoor and outdoor waste bins, stainless-steel bins, plastic bins, recycling bins, wooden bins, and pole ashtrays for clean, efficient premises.",
+    points: ["Polished stainless-steel bins for offices and hotel lobbies", "Colour-coded recycling bins with separate compartments", "Outdoor public-space bins with durable easy-clean bodies"],
+    items: ["Stainless Steel Bin", "Office And Room Bin", "Plastic Bin", "Wooden Bin", "Pole Ashtray", "Outdoor Bin", "Recycle Bin"],
+    seo: "waste bins supplier UAE, recycling bins Dubai, stainless steel bin supplier",
+    cta: "Full Bin Collection",
+  },
+  {
+    key: "events",
+    title: "Hotels & Events Equipment",
+    tag: "Hospitality",
+    icon: "event",
+    material: "Hospitality",
+    image: images.events,
+    sourceImage: images.gdsCatalog1,
+    description:
+      "Premium hotel equipment and hospitality supplies for furnished apartments, banquet venues, resorts, and event operators.",
+    points: ["Rollaway beds, foldable beds, bellman trolleys, banquet tables, and chairs", "Bed and bath linens, towels, duvet covers, and hotel accessories", "Food serving trays, catering equipment, electronics, and housekeeping carts"],
+    items: ["House Keeping Equipments", "Bed and Bath Linen", "Baby Changing Station", "Food Serving Trays", "Hotel Accessories", "Electronics", "Catering Equipment", "Rollaway Beds", "Bellman Trolleys"],
+    seo: "hotel equipment supplier Dubai, banquet furniture UAE, hospitality supplies",
+    cta: "Request Catalog",
+  },
+  {
+    key: "safety",
+    title: "Staff Accommodation & Safety Equipment",
+    tag: "PPE & Road Safety",
+    icon: "health_and_safety",
+    material: "Safety Equipment",
+    image: images.logistics,
+    sourceImage: images.gdsCatalog2,
+    description:
+      "Complete solutions for hotel staff accommodation, labour camps, executive housing, hostels, construction sites, and public events.",
+    points: ["Safety shoes, helmets, gloves, and high-visibility clothing", "First-aid kits, safety gadgets, and workplace compliance essentials", "Road safety barriers, barricades, and traffic control equipment"],
+    items: ["Safety Equipment & PPE", "Safety Shoes", "Helmets", "Gloves", "First-Aid Kits", "Road Safety Barriers", "Traffic Barriers", "Staff Accommodation Furniture"],
+    seo: "PPE supplier UAE, labour camp equipment supplier, road safety barriers",
+    cta: "Plan Safety Supply",
+  },
+];
 
-function getCartTotal() {
-  return state.cart.reduce((sum, item) => {
-    const product = products.find((entry) => entry.id === item.id);
-    return sum + (product?.price || 0) * item.qty;
-  }, 0);
-}
+const gdsProductGroups = categories.map(({ title, tag, items, sourceImage }) => ({
+  title,
+  tag,
+  items,
+  image: sourceImage,
+}));
 
-function setRoute(route) {
+const values = [
+  ["lightbulb", "Innovation", "Continual improvement and adoption of new solutions for accommodation, hospitality, and safety supply."],
+  ["verified_user", "Accountability", "Transparent operations, dependable service, and clear ownership from enquiry to delivery."],
+  ["handshake", "Honesty & Equity", "Ethical dealing, fair pricing, and recommendations matched to client budgets."],
+  ["architecture", "Quality", "Durable commercial-grade products, certified safety gear, and anti-rust finishes."],
+  ["inventory_2", "High Stock Availability", "A stockist model built for fast UAE and GCC deliveries across urgent project timelines."],
+  ["speed", "Efficiency", "Streamlined product selection, supply, delivery, and installation for large-volume orders."],
+];
+
+const articles = [
+  {
+    category: "Mattresses",
+    title: "Sleep Better Tonight: Medicated Mattress That Improves Your Sleep Quality",
+    image: images.gdsBunkBeds,
+    read: "7 min read",
+    summary:
+      "How medicated orthopedic mattresses distribute weight evenly, support spinal alignment, and reduce pressure on neck, hips, and shoulders.",
+  },
+  {
+    category: "Sustainability",
+    title: "The Essential Role of Recycling Bins in Waste Management",
+    image: images.gdsWasteBins,
+    read: "6 min read",
+    summary:
+      "Why colour-coded recycling bins simplify waste separation, encourage reuse, and reduce environmental impact across busy facilities.",
+  },
+  {
+    category: "Crowd Control",
+    title: "The Ultimate Guide to Crowd Control Stanchions: Types & Uses",
+    image: images.gdsQueue,
+    read: "4 min read",
+    summary:
+      "A practical guide to retractable barriers, rope barriers, VIP stanchions, queue barriers, and event safety applications.",
+  },
+  {
+    category: "Procurement",
+    title: "Choosing Office Furniture and Accommodation Supply for UAE Projects",
+    image: images.gdsCatalog1,
+    read: "8 min read",
+    summary:
+      "How to balance cost, durability, availability, and installation timing when ordering high-volume project furniture.",
+  },
+];
+
+const serviceFeatures = [
+  { icon: "verified", image: images.gdsQuality, title: "Quality products", text: "Commercial-grade materials, heavy-duty construction, and anti-rust bunk-bed finishes designed for demanding accommodation use." },
+  { icon: "local_shipping", image: images.gdsDelivery, title: "Supply, delivery & install", text: "From product selection to supply, delivery, and installation, Vega keeps project execution coordinated and clear." },
+  { icon: "handshake", image: images.gdsCommitment, title: "Commitment", text: "Professional support, dependable recommendations, and project handling matched to client budgets and timelines." },
+  { icon: "history", title: "15+ years of experience", text: "A Dubai-based importer, stockist, and solution provider serving clients across the UAE and GCC." },
+  { icon: "support_agent", title: "24/7 support", text: "A dedicated support hotline for urgent enquiries, quote requests, and project coordination." },
+];
+
+const metaByRoute = {
+  home: "Vega Turnkey Projects - Dubai's leading supplier of labour-camp furniture, bunk beds, staff accommodation equipment, hotel supplies, queue barriers, flag poles and waste bins. Affordable prices, high stock and fast delivery across the UAE and GCC.",
+  catalog: "Browse premium bunk beds, mattresses, queue barriers, flag poles, waste bins, recycling bins, hotel equipment, linens, PPE and road safety barriers from Vega Turnkey Projects in Dubai.",
+  mission: "Learn about Vega Turnkey Projects, also known as GDS-UAE, a Dubai-based importer and stockist with 15+ years of experience in labour-camp furniture, safety workwear and crowd control solutions.",
+  insights: "Read Vega Turnkey insights on medicated mattresses, recycling bins, crowd control stanchions, hotel safety barriers and project furniture selection in the UAE.",
+};
+
+const state = {
+  route: location.hash.replace("#", "") || "home",
+  material: "All",
+  mobileOpen: false,
+  modalOpen: false,
+  notice: "",
+};
+
+let revealObserver = null;
+let scrollProgressReady = false;
+
+function go(route) {
   state.route = route;
-  state.mobileMenu = false;
+  state.mobileOpen = false;
+  location.hash = route === "home" ? "" : route;
   window.scrollTo({ top: 0, behavior: "smooth" });
   render();
 }
 
-function addToCart(id, qty = 1) {
-  const item = state.cart.find((entry) => entry.id === id);
-  if (item) {
-    item.qty += qty;
-  } else {
-    state.cart.push({ id, qty });
-  }
-  state.cartOpen = true;
-  saveState();
-  render();
+function icon(name) {
+  return `<span class="material-symbols-outlined" aria-hidden="true">${name}</span>`;
 }
 
-function updateCart(id, qty) {
-  state.cart = qty <= 0 ? state.cart.filter((item) => item.id !== id) : state.cart.map((item) => (item.id === id ? { ...item, qty } : item));
-  saveState();
-  render();
-}
-
-function toggleWishlist(id) {
-  state.wishlist = state.wishlist.includes(id)
-    ? state.wishlist.filter((entry) => entry !== id)
-    : [...state.wishlist, id];
-  saveState();
-  render();
-}
-
-function openProduct(id) {
-  state.selectedProductId = id;
-  state.selectedGalleryIndex = 0;
-  state.selectedTab = "Description";
-  render();
-}
-
-function closeProduct() {
-  state.selectedProductId = null;
-  render();
-}
-
-function getFilteredProducts() {
-  let result = [...products];
-  if (state.category !== "All") result = result.filter((item) => item.category === state.category);
-  if (state.fabric !== "All") result = result.filter((item) => item.fabric === state.fabric);
-  if (state.occasion !== "All") result = result.filter((item) => item.occasion === state.occasion);
-  if (state.sort === "Price: Low to High") result.sort((a, b) => a.price - b.price);
-  if (state.sort === "Price: High to Low") result.sort((a, b) => b.price - a.price);
-  if (state.sort === "Rating") result.sort((a, b) => b.rating - a.rating);
-  return result;
-}
-
-function productCard(product) {
-  const wished = state.wishlist.includes(product.id);
-  return `
-    <article class="product-card">
-      <button class="wish-button" data-action="wishlist" data-id="${product.id}" aria-label="${wished ? "Remove from" : "Add to"} wishlist">${wished ? "Saved" : "Save"}</button>
-      <button class="product-image" data-action="open-product" data-id="${product.id}" aria-label="View ${product.name}">
-        <img src="${product.image}" alt="${product.name}" loading="lazy" />
-        <span class="quick-add">View Details</span>
-      </button>
-      <div class="product-info">
-        <div class="product-meta">
-          <span class="badge">${product.badge}</span>
-          <span>${product.rating.toFixed(1)} / 5</span>
-        </div>
-        <h3>${product.name}</h3>
-        <p>${product.material} &middot; ${product.occasion}</p>
-        <div class="price-row">
-          <strong>${formatPrice(product.price)}</strong>
-          ${product.oldPrice ? `<s>${formatPrice(product.oldPrice)}</s>` : ""}
-        </div>
-        <button class="solid-button small" data-action="add-cart" data-id="${product.id}">Add to Cart</button>
-      </div>
-    </article>
-  `;
+function navLink(route, label, filter = "") {
+  const active =
+    state.route === route || (route === "home" && state.route === "");
+  return `<button class="nav-link ${active ? "active" : ""}" data-route="${route}" ${filter ? `data-filter="${filter}"` : ""}>${label}</button>`;
 }
 
 function header() {
-  const routes = ["home", "shop", "about", "contact"];
   return `
     <header class="site-header">
-      <a class="brand" href="#" data-route="home" aria-label="Kacheri Sarees home">
-        <span>K</span>
-        <strong>Kacheri Sarees</strong>
-      </a>
-      <button class="menu-button" data-action="toggle-menu" aria-label="Open menu">Menu</button>
-      <nav class="${state.mobileMenu ? "open" : ""}" aria-label="Main navigation">
-        ${routes.map((route) => `<a href="#" data-route="${route}" class="${state.route === route ? "active" : ""}">${route}</a>`).join("")}
+      <div class="scroll-progress" aria-hidden="true"><span></span></div>
+      <nav class="container nav-shell" aria-label="Primary navigation">
+        <button class="brand" data-route="home" aria-label="Vega Turnkey home">
+          <img class="brand-logo" src="${images.gdsLogo}" alt="The Vega Turnkey Projects LLC" />
+          <span class="brand-name"><span>Vega Turnkey</span><small>GDS-UAE</small></span>
+        </button>
+        <div class="desktop-nav">${navItems.map(([route, label, filter]) => navLink(route, label, filter)).join("")}</div>
+        <div class="header-actions">
+          <button class="quote-button" data-open-quote>Request a Quote</button>
+          <button class="menu-button" data-menu aria-label="Toggle menu">${icon(state.mobileOpen ? "close" : "menu")}</button>
+        </div>
       </nav>
-      <div class="header-actions">
-        <button class="icon-link" data-route="shop" aria-label="Wishlist">Save<span>${state.wishlist.length}</span></button>
-        <button class="cart-button" data-action="cart-open" aria-label="Open cart">Bag <span>${getCartCount()}</span></button>
+      <div class="mobile-panel ${state.mobileOpen ? "open" : ""}">
+        ${navItems.map(([route, label, filter]) => navLink(route, label, filter)).join("")}
+        <button class="quote-button wide" data-open-quote>Request a Quote</button>
       </div>
     </header>
   `;
 }
 
-function homePage() {
-  const featured = products.slice(0, 4);
+function hero() {
   return `
-    <main>
-      <section class="hero">
+    <section class="hero-section">
+      <div class="pattern" aria-hidden="true"></div>
+      <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="section-label">Mumbai atelier &middot; Handcrafted heirlooms</p>
-          <h1>Kacheri Sarees</h1>
-          <p>Handcrafted sarees and jewellery selected for ceremonies, festivals, and graceful everyday rituals.</p>
-          <div class="hero-actions">
-            <button class="solid-button" data-route="shop">Shop Collection</button>
-            <button class="ghost-button" data-route="about">Our Story</button>
+          <span class="eyebrow">Dubai Stockist | UAE & GCC Delivery</span>
+          <h1>Staff accommodation & hospitality solutions, <span>quality and safety for every project.</span></h1>
+          <p>Vega Turnkey Projects LLC, also known as GDS-UAE, has spent over 15 years supplying durable labour-camp furniture, bunk beds, lockers, mattresses, hotel equipment, safety gear, queue barriers, flag poles, and waste bins across the UAE and GCC.</p>
+          <div class="button-row">
+            <button class="primary-button" data-open-quote>Request a Quote</button>
+            <button class="secondary-button" data-route="catalog">Browse Products</button>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="${products[0].image}" alt="Woman wearing a yellow silk saree and jewellery" />
-          <div class="hero-card">
-            <strong>Festive edit</strong>
-            <span>Burnished silks, temple jewellery, and hand-finished keepsakes.</span>
-          </div>
+        <div class="hero-media glass-card">
+          <img src="${images.hero}" alt="Modern glass architecture with precise steel framing" />
         </div>
-      </section>
-
-      <section class="motif-divider" aria-hidden="true"></section>
-
-      <section class="trust-strip" aria-label="Shopping benefits">
-        ${["Free shipping over Rs. 5,000", "Secure payments", "7-day easy returns", "Handcrafted pieces"].map((item) => `<span>${item}</span>`).join("")}
-      </section>
-
-      <section class="category-showcase">
-        <button class="category-card saree-card" data-filter-category="Sarees">
-          <span>Sarees</span>
-          <strong>Silks, linens, Banarasi weaves</strong>
-        </button>
-        <button class="category-card jewellery-card" data-filter-category="Jewellery">
-          <span>Jewellery</span>
-          <strong>Temple, polki, enamel accents</strong>
-        </button>
-      </section>
-
-      <section class="section-shell">
-        <div class="section-heading">
-          <p class="section-label">New arrivals</p>
-          <h2>Pieces with a sense of occasion.</h2>
-          <button class="text-button" data-route="shop">View all</button>
-        </div>
-        <div class="product-grid">${featured.map(productCard).join("")}</div>
-      </section>
-
-      <section class="promo-banner">
-        <div>
-          <p class="section-label">Akshaya edit</p>
-          <h2>Up to 20% off ceremonial silks</h2>
-          <p>Ends in <strong id="countdown">02d 14h 22m</strong></p>
-        </div>
-        <button class="solid-button light" data-route="shop">Explore Sale</button>
-      </section>
-
-      <section class="story-band">
-        <img src="${products[1].image}" alt="Ivory handcrafted saree with gold jewellery" loading="lazy" />
-        <div>
-          <p class="section-label">The Kacheri Sarees promise</p>
-          <h2>Every drape is selected with the maker in mind.</h2>
-          <p>We work with craft clusters and finishing specialists around India, then curate each saree and ornament from our Mumbai studio for fit, finish, and longevity.</p>
-          <button class="ghost-button" data-route="about">Meet the artisans</button>
-        </div>
-      </section>
-
-      <section class="instagram-grid" aria-label="Gallery">
-        ${products.slice(0, 6).map((product) => `<img src="${product.image}" alt="${product.name}" loading="lazy" />`).join("")}
-      </section>
-
-      ${newsletter()}
-    </main>
-  `;
-}
-
-function shopPage() {
-  const fabrics = ["All", ...new Set(products.map((item) => item.fabric))];
-  const occasions = ["All", ...new Set(products.map((item) => item.occasion))];
-  const filtered = getFilteredProducts();
-  return `
-    <main>
-      <section class="page-hero compact">
-      <p class="section-label">Shop Kacheri Sarees</p>
-        <h1>Browse sarees and jewellery</h1>
-      </section>
-      <section class="filter-bar">
-        ${selectControl("category", ["All", "Sarees", "Jewellery"], state.category, "Category")}
-        ${selectControl("fabric", fabrics, state.fabric, "Fabric")}
-        ${selectControl("occasion", occasions, state.occasion, "Occasion")}
-        ${selectControl("sort", ["Featured", "Price: Low to High", "Price: High to Low", "Rating"], state.sort, "Sort")}
-      </section>
-      <section class="section-shell">
-        <div class="shop-summary">
-          <span>${filtered.length} pieces</span>
-          <button class="text-button" data-action="reset-filters">Reset filters</button>
-        </div>
-        <div class="product-grid">${filtered.slice(0, state.visible).map(productCard).join("")}</div>
-        ${
-          filtered.length > state.visible
-            ? `<div class="load-more"><button class="ghost-button" data-action="load-more">Load More</button></div>`
-            : ""
-        }
-      </section>
-      <section class="trust-strip bottom">
-        <span>UPI, cards, Paytm, Apple Pay</span>
-        <span>WhatsApp order support</span>
-        <span>Quality checked in Mumbai</span>
-      </section>
-    </main>
-  `;
-}
-
-function selectControl(name, options, value, label) {
-  return `
-    <label>
-      <span>${label}</span>
-      <select data-filter="${name}">
-        ${options.map((option) => `<option value="${option}" ${option === value ? "selected" : ""}>${option}</option>`).join("")}
-      </select>
-    </label>
-  `;
-}
-
-function aboutPage() {
-  return `
-    <main>
-      <section class="page-hero about-hero">
-        <div>
-          <p class="section-label">About Kacheri Sarees</p>
-          <h1>Heritage craft, edited for today.</h1>
-        </div>
-        <img src="${products[2].image}" alt="Festive saree portrait" />
-      </section>
-      <section class="story-band reverse">
-        <img src="${products[0].image}" alt="Kacheri Sarees silk saree styling" loading="lazy" />
-        <div>
-          <p class="section-label">Origin</p>
-          <h2>Built from Mumbai, shaped by Indian craft networks.</h2>
-          <p>Kacheri Sarees began as a private curation service for wedding families and festive wardrobes. The storefront keeps that personal eye while making the experience smoother, searchable, and ready for gifting.</p>
-        </div>
-      </section>
-      <section class="section-shell">
-        <div class="section-heading">
-          <p class="section-label">Artisans</p>
-          <h2>The hands behind the finish.</h2>
-        </div>
-        <div class="artisan-grid">
-          ${artisans.map(([name, craft, years]) => `<article><strong>${name}</strong><span>${craft}</span><p>${years} experience</p></article>`).join("")}
-        </div>
-      </section>
-      <section class="values-grid">
-        ${["Authentic sourcing", "Sustainable care", "Fair trade relationships"].map((item) => `<article><h3>${item}</h3><p>Every collection decision is made for traceability, craft continuity, and long-term wardrobe value.</p></article>`).join("")}
-      </section>
-    </main>
-  `;
-}
-
-function contactPage() {
-  return `
-    <main>
-      <section class="page-hero compact">
-        <p class="section-label">Contact</p>
-        <h1>Visit, write, or message the studio.</h1>
-      </section>
-      <section class="contact-layout">
-        <form class="contact-form" data-form="contact">
-          <label>Name<input required name="name" placeholder="Your name" /></label>
-          <label>Email<input required type="email" name="email" placeholder="you@example.com" /></label>
-          <label>Message<textarea required name="message" placeholder="Tell us what you are looking for"></textarea></label>
-          <button class="solid-button" type="submit">Send Message</button>
-          <p class="form-status" id="contactStatus"></p>
-        </form>
-        <aside class="contact-cards">
-          <article><strong>Email</strong><span>hello@kacherisarees.in</span></article>
-          <article><strong>Phone</strong><span>+91 72086 98768</span></article>
-          <article><strong>WhatsApp</strong><span>Personal styling and order support</span></article>
-          <article><strong>Studio</strong><span>Bandra West, Mumbai</span></article>
-        </aside>
-      </section>
-      <section class="faq" aria-label="Frequently asked questions">
-        ${["Do you offer blouse stitching?", "How long does delivery take?", "Can I book a studio appointment?"]
-          .map((question, index) => `<details ${index === 0 ? "open" : ""}><summary>${question}</summary><p>Yes. The team will confirm measurements, delivery timelines, and styling options directly after your order or enquiry.</p></details>`)
-          .join("")}
-      </section>
-      ${newsletter()}
-    </main>
-  `;
-}
-
-function newsletter() {
-  return `
-    <section class="newsletter">
-      <p class="section-label">Kacheri Sarees letters</p>
-      <h2>New drapes, artisan notes, and private sale previews.</h2>
-      <form data-form="newsletter">
-        <input type="email" required placeholder="Email address" aria-label="Email address" />
-        <button class="solid-button" type="submit">Join</button>
-      </form>
-      <p class="form-status" id="newsletterStatus"></p>
+      </div>
     </section>
   `;
 }
 
-function productModal() {
-  const product = products.find((item) => item.id === state.selectedProductId);
-  if (!product) return "";
-  const image = product.gallery[state.selectedGalleryIndex] || product.image;
-  const tabs = {
-    Description: product.description,
-    Reviews: "Loved for its finish, color richness, and comfortable drape. Average rating: " + product.rating.toFixed(1) + " / 5.",
-    Shipping: "Ships in 2-5 business days across India. Express delivery is available for Mumbai orders.",
-    Care: "Dry clean preferred. Store folded in muslin and air the garment before long storage.",
-  };
+function stats() {
   return `
-    <div class="modal-backdrop" data-action="close-product">
-      <section class="product-modal" role="dialog" aria-modal="true" aria-label="${product.name}">
-        <button class="close-button" data-action="close-product" aria-label="Close">Close</button>
-        <div class="detail-gallery">
-          <div class="zoom-image" style="background-image: url('${image}')">
-            <img src="${image}" alt="${product.name}" />
-          </div>
-          <div class="thumb-row">
-            ${product.gallery.map((galleryImage, index) => `<button class="${index === state.selectedGalleryIndex ? "active" : ""}" data-action="gallery" data-index="${index}"><img src="${galleryImage}" alt="${product.name} view ${index + 1}" /></button>`).join("")}
+    <section class="stats-band">
+      <div class="container stats-grid">
+        ${[
+          ["15+", "Years Experience"],
+          ["UAE", "Dubai Stockist"],
+          ["GCC", "Regional Delivery"],
+          ["24/7", "Support Hotline"],
+        ]
+          .map(([value, label]) => `<article class="stat-card glass-card"><strong>${value}</strong><span>${label}</span></article>`)
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function uaeSupplyBand() {
+  return `
+    <section class="section-space uae-band">
+      <div class="container uae-grid">
+        <div class="uae-copy">
+          <span class="eyebrow gold">UAE Stockist Network</span>
+          <h2>Dubai front office, Sharjah warehouse, GCC-ready dispatch.</h2>
+          <p>Vega serves UAE procurement teams with ready stock for accommodation, hospitality, events, facility management, and road-safety projects, backed by local consultation and delivery coordination.</p>
+          <div class="uae-flag-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="uae-chip-grid">
+            ${coverageCities.map((city) => `<span class="uae-chip">${city}</span>`).join("")}
           </div>
         </div>
-        <div class="detail-info">
-          <span class="badge">${product.badge}</span>
-          <h2>${product.name}</h2>
-          <p>${product.rating.toFixed(1)} / 5 &middot; ${product.category}</p>
-          <div class="price-row detail"><strong>${formatPrice(product.price)}</strong>${product.oldPrice ? `<s>${formatPrice(product.oldPrice)}</s>` : ""}</div>
-          <div class="variant-row">
-            <span>Color</span>
-            <button class="swatch" style="--swatch:${swatchColor(product.color)}" aria-label="${product.color}"></button>
-            <strong>${product.color}</strong>
+        <div class="source-panel glass-card">
+          <div class="source-logo-wrap">
+            <img class="source-logo" src="${images.gdsLogo}" alt="The Vega Turnkey Projects LLC" />
           </div>
-          <div class="variant-row">
-            <span>Material</span>
-            <button class="pill active">${product.material}</button>
+          <div class="source-proof-grid">
+            <article><strong>Karama, Dubai</strong><span>Office: Unique World Business Centre, Hamsah A Building</span></article>
+            <article><strong>Sharjah Industrial Area 18</strong><span>Warehouse 12, Block 6, MAG Logistic Park</span></article>
           </div>
-          <button class="solid-button wide" data-action="add-cart" data-id="${product.id}">Add to Cart</button>
-          <div class="modal-trust"><span>Secure checkout</span><span>Easy returns</span><span>Gift wrap</span></div>
-          <div class="tabs">
-            ${Object.keys(tabs).map((tab) => `<button class="${tab === state.selectedTab ? "active" : ""}" data-action="tab" data-tab="${tab}">${tab}</button>`).join("")}
+          <div class="catalog-preview-grid">
+            <img class="catalog-preview" src="${images.gdsCatalog1}" alt="Vega product catalogue preview page one" />
+            <img class="catalog-preview" src="${images.gdsCatalog2}" alt="Vega product catalogue preview page two" />
           </div>
-          <p class="tab-copy">${tabs[state.selectedTab]}</p>
         </div>
-      </section>
+      </div>
+    </section>
+  `;
+}
+
+function homeCategories() {
+  return `
+    <section class="section-space">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow gold">Our Specialties</span>
+            <h2>Complete project supply, from bunk beds to barriers.</h2>
+          </div>
+          <button class="text-link" data-route="catalog">View Full Catalogue ${icon("arrow_forward")}</button>
+        </div>
+        <div class="bento-grid">
+          ${categories
+            .slice(0, 3)
+            .map(
+              (item, index) => `
+                <article class="image-card glass-card ${index === 0 ? "feature" : ""}">
+                  <img src="${item.sourceImage || item.image}" alt="${item.title}" />
+                  <div class="image-card-copy">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                  </div>
+                </article>
+              `,
+            )
+            .join("")}
+        </div>
+        <div class="quick-category-grid">
+          ${categories
+            .slice(3)
+            .map(
+              (item) => `
+                <article class="mini-category-card glass-card">
+                  ${icon(item.icon)}
+                  <div>
+                    <span>${item.tag}</span>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                  </div>
+                </article>
+              `,
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function whyVega() {
+  const serviceIcon = (feature) => feature.image
+    ? `<img class="service-icon" src="${feature.image}" alt="" aria-hidden="true" />`
+    : icon(feature.icon);
+  return `
+    <section class="section-space why-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow gold">Why Vega</span>
+            <h2>Built for price clarity, stock availability, and fast deliveries.</h2>
+          </div>
+          <p class="section-summary">The strategy is simple: low prices, broad selection, high stock availability, premium quality, and convenient project handling with no compromise on durability.</p>
+        </div>
+        <div class="feature-grid">
+          ${serviceFeatures.map((feature) => `<article class="feature-card glass-card">${serviceIcon(feature)}<h3>${feature.title}</h3><p>${feature.text}</p></article>`).join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function processPreview() {
+  return `
+    <section class="section-space process-section">
+      <div class="container process-grid glass-card">
+        <div>
+          <span class="eyebrow">Service Process</span>
+          <h2>From enquiry to delivery and installation.</h2>
+          <p>Share quantities, site location, product specifications, finish preferences, and timeline. Vega's team confirms availability, recommends suitable options, prepares pricing, and coordinates supply through warehouse dispatch and installation support.</p>
+          <div class="process-steps">
+            <span>01 | Selection</span>
+            <span>02 | Stock & customisation</span>
+            <span>03 | Delivery & installation</span>
+          </div>
+        </div>
+        <div class="process-media">
+          <img src="${images.logistics}" alt="Organized warehouse and logistics process for Vega Turnkey project supply" />
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function testimonial() {
+  return `
+    <section class="section-space quote-section">
+      <div class="container quote-grid glass-card">
+        <div class="quote-mark">${icon("format_quote")}</div>
+        <blockquote>
+          Excellent service! Responsive, fast and cooperative throughout the process.
+        </blockquote>
+        <div class="quote-profile">
+          <div class="avatar">GG</div>
+          <div><strong>Goldenglory General Trading</strong><span>Google review, Aug 2024 | Trustindex verified</span></div>
+        </div>
+        <div class="secondary-quote">
+          <p>"The team was incredibly helpful and understanding. I highly recommend buying from them."</p>
+          <span>Maya Al Ali, Jul 2024</span>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function contactSection() {
+  return `
+    <section class="section-space contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Project Intake</span>
+          <h2>Request pricing for your UAE or GCC project.</h2>
+          <p>Tell us the accommodation, hospitality, safety, or crowd-control products you need. Our team will confirm stock, recommend suitable options, and prepare personalised pricing.</p>
+          <div class="contact-list">
+            <span>${icon("location_on")} Office: M01-410 Corridor 14, Unique World Business Centre, Hamsah A Building, Karama, Dubai, UAE</span>
+            <span>${icon("warehouse")} Warehouse 12, Block 6, MAG Logistic Park, Sharjah Industrial Area 18, UAE</span>
+            <span>${icon("call")} +971 56 735 1095 | +971 56 931 0575 | +971 4 349 8999</span>
+            <span>${icon("mail")} sales@thevegauae.com | admin@thevegauae.com</span>
+          </div>
+        </div>
+        ${inquiryForm("Send Inquiry")}
+      </div>
+    </section>
+  `;
+}
+
+function inquiryForm(buttonText = "Submit") {
+  return `
+    <form class="inquiry-form glass-card" data-form>
+      <label>Name<input required name="name" placeholder="Your full name" /></label>
+      <label>Email<input required name="email" type="email" placeholder="you@company.com" /></label>
+      <label>Project Type
+        <select name="type">
+          <option>Camp Furniture</option>
+          <option>Queue Stanchions</option>
+          <option>Waste Bins</option>
+          <option>Hotels & Events</option>
+          <option>Staff Accommodation & Safety Equipment</option>
+        </select>
+      </label>
+      <label>Brief<textarea name="brief" rows="4" placeholder="Timeline, quantities, destination, and material expectations"></textarea></label>
+      <button class="primary-button" type="submit">${buttonText} ${icon("send")}</button>
+    </form>
+  `;
+}
+
+function homePage() {
+  return `${hero()}${stats()}${uaeSupplyBand()}${homeCategories()}${whyVega()}${processPreview()}${testimonial()}${contactSection()}`;
+}
+
+function catalogPage() {
+  const filters = ["All", ...categories.map((item) => item.material)];
+  const visible = categories.filter((item) => state.material === "All" || item.material === state.material);
+  return `
+    <section class="page-hero catalog-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <span class="eyebrow">Collections</span>
+          <h1>Product Catalog</h1>
+          <p>Labour camp furniture, staff accommodation equipment, hotel supplies, queue barriers, flag poles, waste bins, PPE, and road safety barriers stocked for fast UAE and GCC supply.</p>
+        </div>
+        <div class="icon-rail">
+          ${categories.map((item) => `<button class="rail-icon" data-filter="${item.material}" aria-label="${item.title}">${icon(item.icon)}<span>${item.title}</span></button>`).join("")}
+        </div>
+      </div>
+    </section>
+    <section class="section-space compact">
+      <div class="container catalog-layout">
+        <aside class="filters glass-card">
+          <h2>Filters</h2>
+          <span class="filter-label">Category</span>
+          <div class="filter-stack">
+            ${filters.map((material) => `<button class="${state.material === material ? "selected" : ""}" data-filter="${material}">${material}</button>`).join("")}
+          </div>
+        </aside>
+        <div class="catalog-list">
+          ${visible.map(productCard).join("")}
+        </div>
+      </div>
+    </section>
+    ${gdsItemList()}
+  `;
+}
+
+function gdsItemList() {
+  return `
+    <section class="section-space compact gds-items-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow gold">GDS-UAE Product List</span>
+            <h2>Item families reflected from the official GDS catalogue.</h2>
+          </div>
+          <p class="section-summary">Use this as the quick procurement scan before requesting a quote. Every group maps back to Vega's public GDS-UAE product navigation.</p>
+        </div>
+        <div class="gds-items-grid">
+          ${gdsProductGroups.map((group) => `
+            <article class="gds-item-card glass-card">
+              <img src="${group.image}" alt="${group.title}" />
+              <div>
+                <span>${group.tag}</span>
+                <h3>${group.title}</h3>
+                <div class="item-pill-list">
+                  ${group.items.map((item) => `<small>${item}</small>`).join("")}
+                </div>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function productCard(item) {
+  const cardImage = item.sourceImage || item.image;
+  return `
+    <article class="product-card glass-card">
+      <div class="product-image source-product-image"><img src="${cardImage}" alt="${item.title}" /></div>
+      <div class="product-copy">
+        <div class="product-meta"><span>${item.title}</span><small>${item.tag}</small></div>
+        <p>${item.description}</p>
+        <ul>${item.points.map((point) => `<li>${icon("check_circle")} ${point}</li>`).join("")}</ul>
+        <div class="item-pill-list compact">${item.items.slice(0, 7).map((listedItem) => `<small>${listedItem}</small>`).join("")}</div>
+        <div class="keyword-row">${item.seo}</div>
+        <button class="text-link" data-open-quote>${item.cta} ${icon("arrow_forward")}</button>
+      </div>
+    </article>
+  `;
+}
+
+function missionPage() {
+  return `
+    <section class="page-hero mission-hero">
+      <div class="container narrow">
+        <span class="eyebrow">Our Foundation</span>
+        <h1>Mission, Vision & Core Values</h1>
+        <p>Vega Turnkey Projects LLC is a Dubai-based importer, stockist, and complete solution provider for labour camp and staff accommodation furniture, safety workwear, PPE, crowd-control systems, hotel equipment, and public-space essentials.</p>
+      </div>
+    </section>
+    <section class="section-space compact">
+      <div class="container two-panel">
+        <article class="glass-card principle-card">${icon("track_changes")}<h2>Our Mission</h2><p>To offer customers the lowest possible prices, best selection, high stock availability, fast deliveries, premium quality, and utmost convenience, with affordability and no compromise on quality.</p></article>
+        <article class="glass-card principle-card">${icon("visibility")}<h2>Our Vision</h2><p>To become the most customer-centric provider of staff-accommodation and labour-camp furniture and safety workwear in the UAE and GCC.</p></article>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container">
+        <div class="section-head solo"><h2>The Pillars of Vega</h2></div>
+        <div class="values-grid">
+          ${values.map(([valueIcon, title, text]) => `<article class="value-card glass-card">${icon(valueIcon)}<h3>${title}</h3><p>${text}</p></article>`).join("")}
+        </div>
+      </div>
+    </section>
+    <section class="section-space advantage-section">
+      <div class="container advantage-grid">
+        <div>
+          <span class="eyebrow gold">Precision Logistics</span>
+          <h2>The Vega Advantage</h2>
+          <p>With capable infrastructure and an experienced team, Vega systematically executes projects to match requirements, budgets, and delivery schedules across the UAE and GCC.</p>
+          <ul class="check-list">
+            <li>${icon("check_circle")} Product selection, supply, delivery, and installation</li>
+            <li>${icon("check_circle")} Large inventory with custom sizes, colours, and materials</li>
+            <li>${icon("check_circle")} 24/7 support hotline: +971 56 735 1095</li>
+          </ul>
+          <div class="button-row"><button class="primary-button" data-open-quote>Start Your Inquiry</button><button class="secondary-button" data-route="catalog">Download Portfolio</button></div>
+        </div>
+        <img src="${images.logistics}" alt="Modern logistics warehouse with organized industrial shelving" />
+      </div>
+    </section>
+  `;
+}
+
+function insightsPage() {
+  return `
+    <section class="featured-article">
+      <div class="container featured-grid">
+        <div class="featured-image"><img src="${articles[0].image}" alt="${articles[0].title}" /></div>
+        <div class="featured-copy">
+          <span class="eyebrow">Featured Intelligence</span>
+          <h1>${articles[0].title}</h1>
+          <p>${articles[0].summary}</p>
+          <button class="primary-button">Read Perspective ${icon("arrow_right_alt")}</button>
+        </div>
+      </div>
+    </section>
+    <section class="section-space compact">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow gold">Latest Blogs</span><h2>Hospitality, safety, staff accommodation, and facility-management insights.</h2></div>
+          <div class="chip-row"><button>All</button><button>Mattresses</button><button>Recycling</button><button>Stanchions</button></div>
+        </div>
+        <div class="article-grid">
+          ${articles.slice(1).map(articleCard).join("")}
+        </div>
+      </div>
+    </section>
+    <section class="section-space newsletter-section">
+      <div class="container newsletter glass-card">
+        <div><h2>Stay Ahead of the Curve.</h2><p>Receive product availability notes, project supply guides, and UAE hospitality and safety equipment insights directly in your inbox.</p><small>Curated for procurement teams and facility managers.</small></div>
+        <form data-form class="newsletter-form"><input required type="email" placeholder="work@email.com" /><button class="primary-button">Subscribe</button></form>
+      </div>
+    </section>
+  `;
+}
+
+function articleCard(article) {
+  return `
+    <article class="article-card glass-card">
+      <img src="${article.image}" alt="${article.title}" />
+      <div>
+        <span>${article.category}</span>
+        <h3>${article.title}</h3>
+        <p>${article.summary}</p>
+        <small>${article.read} ${icon("north_east")}</small>
+      </div>
+    </article>
+  `;
+}
+
+function footer() {
+  return `
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><img class="footer-logo" src="${images.gdsLogo}" alt="The Vega Turnkey Projects LLC" /><strong>Vega Turnkey</strong><p>GDS-UAE supplier of labour-camp furniture, bunk beds, staff accommodation equipment, hotel supplies, queue barriers, flag poles, waste bins, PPE, and safety equipment.</p></div>
+        <div><span>Products</span><button data-route="catalog">Camp Furniture</button><button data-route="catalog">Queue Barriers</button><button data-route="catalog">Waste Bins</button><button data-route="catalog">Hotels & Events</button><button data-route="catalog">Safety & PPE</button></div>
+        <div><span>Company</span><button data-route="mission">About Us</button><button data-route="insights">Insights</button><button data-open-quote>Contact Support</button></div>
+        <form class="footer-form" data-form><span>Project Updates</span><div><input aria-label="Email" required type="email" placeholder="Email address" /><button>${icon("arrow_forward")}</button></div></form>
+      </div>
+      <div class="container footer-bottom"><span>(c) 2026 Vega Turnkey Projects LLC. sales@thevegauae.com</span><span>Privacy Policy - Terms of Service</span></div>
+    </footer>
+  `;
+}
+
+function modal() {
+  if (!state.modalOpen) return "";
+  return `
+    <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Request a quote">
+      <div class="modal glass-card">
+        <button class="modal-close" data-close aria-label="Close">${icon("close")}</button>
+        <span class="eyebrow">Quote Desk | +971 56 735 1095</span>
+        <h2>Request a Quote</h2>
+        ${inquiryForm("Submit Request")}
+      </div>
     </div>
   `;
 }
 
-function swatchColor(color) {
-  return {
-    Marigold: "#c9a13b",
-    Ivory: "#fff3df",
-    Rose: "#d4a5a5",
-    "Antique gold": "#a87932",
-    Ruby: "#8c2637",
-    Maroon: "#6b2d2d",
-    Sage: "#8fa38a",
-    Pearl: "#f4eadb",
-  }[color] || "#d4a5a5";
+function notice() {
+  return state.notice ? `<div class="toast">${state.notice}</div>` : "";
 }
 
-function cartDrawer() {
-  const rows = state.cart
-    .map((item) => {
-      const product = products.find((entry) => entry.id === item.id);
-      if (!product) return "";
-      return `
-        <article class="cart-item">
-          <img src="${product.image}" alt="${product.name}" />
-          <div>
-            <strong>${product.name}</strong>
-            <span>${formatPrice(product.price)}</span>
-            <div class="qty-row">
-              <button data-action="cart-qty" data-id="${product.id}" data-qty="${item.qty - 1}" aria-label="Decrease quantity">-</button>
-              <span>${item.qty}</span>
-              <button data-action="cart-qty" data-id="${product.id}" data-qty="${item.qty + 1}" aria-label="Increase quantity">+</button>
-            </div>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
-  return `
-    <aside class="cart-drawer ${state.cartOpen ? "open" : ""}" aria-label="Shopping cart">
-      <div class="drawer-header">
-        <strong>Your Bag</strong>
-        <button data-action="cart-close" aria-label="Close cart">Close</button>
-      </div>
-      <div class="cart-list">${rows || `<p class="empty-cart">Your bag is ready for something beautiful.</p>`}</div>
-      <div class="cart-footer">
-        <div><span>Subtotal</span><strong>${formatPrice(getCartTotal())}</strong></div>
-        <button class="solid-button wide" ${state.cart.length ? "" : "disabled"}>Checkout</button>
-      </div>
-    </aside>
-    <button class="drawer-scrim ${state.cartOpen ? "open" : ""}" data-action="cart-close" aria-label="Close cart overlay"></button>
-  `;
+function routeMarkup() {
+  if (state.route === "catalog") return catalogPage();
+  if (state.route === "mission") return missionPage();
+  if (state.route === "insights") return insightsPage();
+  return homePage();
 }
 
 function render() {
-  const pages = {
-    home: homePage,
-    shop: shopPage,
-    about: aboutPage,
-    contact: contactPage,
-  };
-  document.querySelector("#app").innerHTML = `
-    ${header()}
-    ${pages[state.route]()}
-    ${cartDrawer()}
-    ${productModal()}
-    <footer class="site-footer">
-      <strong>Kacheri Sarees</strong>
-      <span>Handcrafted sarees and jewellery &middot; Mumbai</span>
-    </footer>
-  `;
-  tickCountdown();
+  document.getElementById("app").innerHTML = `${header()}<main>${routeMarkup()}</main>${footer()}${modal()}${notice()}`;
+  updateMeta();
+  enhanceMotion();
+  bindEvents();
 }
 
-function tickCountdown() {
-  const element = document.querySelector("#countdown");
-  if (!element) return;
-  const end = new Date();
-  end.setDate(end.getDate() + 2);
-  end.setHours(23, 59, 0, 0);
-  const diff = Math.max(0, end.getTime() - Date.now());
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const minutes = Math.floor((diff % 3600000) / 60000);
-  element.textContent = `${String(days).padStart(2, "0")}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m`;
+function updateMeta() {
+  const route = state.route || "home";
+  document.title = route === "home"
+    ? "Vega Turnkey Projects | Labour Camp Furniture Supplier in UAE"
+    : `Vega Turnkey Projects | ${route[0].toUpperCase()}${route.slice(1)}`;
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute("content", metaByRoute[route] || metaByRoute.home);
+  }
 }
 
-document.addEventListener("click", (event) => {
-  const routeTarget = event.target.closest("[data-route]");
-  if (routeTarget) {
-    event.preventDefault();
-    setRoute(routeTarget.dataset.route);
+function enhanceMotion() {
+  updateScrollProgress();
+  if (!scrollProgressReady) {
+    scrollProgressReady = true;
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress);
+  }
+
+  const shouldReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.toggle("motion-reduced", shouldReduceMotion);
+  document.documentElement.classList.add("motion-ready");
+
+  if (revealObserver) {
+    revealObserver.disconnect();
+  }
+
+  const revealTargets = document.querySelectorAll([
+    ".hero-copy",
+    ".hero-media",
+    ".stat-card",
+    ".section-head",
+    ".image-card",
+    ".mini-category-card",
+    ".feature-card",
+    ".uae-copy",
+    ".source-panel",
+    ".uae-chip",
+    ".gds-item-card",
+    ".process-grid",
+    ".quote-grid",
+    ".contact-grid > *",
+    ".product-card",
+    ".principle-card",
+    ".value-card",
+    ".advantage-grid > *",
+    ".featured-grid > *",
+    ".article-card",
+    ".newsletter",
+    ".footer-grid > *",
+  ].join(","));
+
+  revealTargets.forEach((element, index) => {
+    element.classList.add("reveal-item");
+    element.style.setProperty("--reveal-order", String(index % 6));
+  });
+
+  if (shouldReduceMotion || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
     return;
   }
 
-  const categoryTarget = event.target.closest("[data-filter-category]");
-  if (categoryTarget) {
-    state.category = categoryTarget.dataset.filterCategory;
-    state.route = "shop";
-    state.visible = 6;
-    render();
-    return;
-  }
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
 
-  const actionTarget = event.target.closest("[data-action]");
-  if (!actionTarget) return;
-  const { action, id } = actionTarget.dataset;
+  revealTargets.forEach((element) => revealObserver.observe(element));
+}
 
-  if (action === "toggle-menu") {
-    state.mobileMenu = !state.mobileMenu;
-    render();
-  }
-  if (action === "cart-open") {
-    state.cartOpen = true;
-    render();
-  }
-  if (action === "cart-close") {
-    state.cartOpen = false;
-    render();
-  }
-  if (action === "add-cart") addToCart(id);
-  if (action === "wishlist") toggleWishlist(id);
-  if (action === "open-product") openProduct(id);
-  if (action === "close-product" && (event.target === actionTarget || actionTarget.classList.contains("close-button"))) closeProduct();
-  if (action === "gallery") {
-    state.selectedGalleryIndex = Number(actionTarget.dataset.index) || 0;
-    render();
-  }
-  if (action === "tab") {
-    state.selectedTab = actionTarget.dataset.tab;
-    render();
-  }
-  if (action === "cart-qty") updateCart(id, Number(actionTarget.dataset.qty));
-  if (action === "load-more") {
-    state.visible += 4;
-    render();
-  }
-  if (action === "reset-filters") {
-    state.category = "All";
-    state.fabric = "All";
-    state.occasion = "All";
-    state.sort = "Featured";
-    state.visible = 6;
-    render();
-  }
-});
+function updateScrollProgress() {
+  const progress = document.querySelector(".scroll-progress span");
+  if (!progress) return;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const value = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+  progress.style.transform = `scaleX(${value})`;
+}
 
-document.addEventListener("change", (event) => {
-  const filter = event.target.closest("[data-filter]");
-  if (!filter) return;
-  state[filter.dataset.filter] = filter.value;
-  state.visible = 6;
+function bindEvents() {
+  document.querySelectorAll("[data-route]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.route === "catalog" && !button.dataset.filter) {
+        state.material = "All";
+      }
+      go(button.dataset.route);
+    });
+  });
+  document.querySelectorAll("[data-menu]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.mobileOpen = !state.mobileOpen;
+      render();
+    });
+  });
+  document.querySelectorAll("[data-open-quote]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.modalOpen = true;
+      render();
+    });
+  });
+  document.querySelectorAll("[data-close], .modal-backdrop").forEach((element) => {
+    element.addEventListener("click", (event) => {
+      if (event.target === element || element.hasAttribute("data-close")) {
+        state.modalOpen = false;
+        render();
+      }
+    });
+  });
+  document.querySelectorAll("[data-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.material = button.dataset.filter;
+      state.route = "catalog";
+      render();
+    });
+  });
+  document.querySelectorAll("[data-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      state.notice = "Thanks. Vega's team will respond within 24 hours.";
+      state.modalOpen = false;
+      render();
+      setTimeout(() => {
+        state.notice = "";
+        render();
+      }, 2800);
+    });
+  });
+}
+
+window.addEventListener("hashchange", () => {
+  state.route = location.hash.replace("#", "") || "home";
   render();
 });
 
-document.addEventListener("submit", (event) => {
-  const form = event.target.closest("form");
-  if (!form) return;
-  event.preventDefault();
-  const status = form.dataset.form === "contact" ? document.querySelector("#contactStatus") : document.querySelector("#newsletterStatus");
-  if (status) status.textContent = form.dataset.form === "contact" ? "Thanks. The studio will reply shortly." : "You are on the Kacheri Sarees list.";
-  form.reset();
-});
-
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    state.selectedProductId = null;
-    state.cartOpen = false;
-    render();
-  }
-});
-
 render();
-setInterval(tickCountdown, 60000);

@@ -11,6 +11,8 @@ const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
   '.glb': 'model/gltf-binary',
   '.html': 'text/html; charset=utf-8',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.map': 'application/json; charset=utf-8',
@@ -19,6 +21,7 @@ const mimeTypes = {
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.wasm': 'application/wasm',
+  '.webp': 'image/webp',
 };
 
 function resolveRequestPath(requestUrl) {
