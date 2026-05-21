@@ -1069,11 +1069,6 @@ textarea:focus {
 }
 
 .source-product-image img {
-  object-fit: contain;
-  padding: clamp(1rem, 3vw, 1.5rem);
-}
-
-.source-product-image img[src$=".svg"] {
   object-fit: cover;
   padding: 0;
 }

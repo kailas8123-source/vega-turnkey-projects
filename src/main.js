@@ -28,11 +28,11 @@ const images = {
   gdsQuality: "/assets/gds/quality.png",
   gdsDelivery: "/assets/gds/delivery.png",
   gdsCommitment: "/assets/gds/commitment.png",
-  sceneCamp: "/assets/gds/camp-bunk-bed-scene.svg",
-  sceneWaste: "/assets/gds/waste-bin-scene.svg",
-  sceneQueue: "/assets/gds/queue-barrier-scene.svg",
-  sceneHospitality: "/assets/gds/hospitality-equipment-scene.svg",
-  sceneSafety: "/assets/gds/safety-ppe-scene.svg",
+  sceneCamp: "/assets/gds/hyperreal-camp-bunk-beds.png",
+  sceneWaste: "/assets/gds/hyperreal-waste-bins.png",
+  sceneQueue: "/assets/gds/hyperreal-queue-barriers.png",
+  sceneHospitality: "/assets/gds/hyperreal-hospitality-equipment.png",
+  sceneSafety: "/assets/gds/hyperreal-safety-ppe.png",
 };
 
 const coverageCities = ["UAE", "Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "GCC", "Oman", "Qatar", "Bahrain", "Kuwait", "Saudi Arabia", "Nigeria"];
