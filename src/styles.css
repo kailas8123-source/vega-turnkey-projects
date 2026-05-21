@@ -1796,47 +1796,173 @@ textarea:focus {
   margin: 0;
 }
 
+.whatsapp-fab {
+  align-items: center;
+  background: #1fa855;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  bottom: 1.35rem;
+  box-shadow: 0 22px 55px rgba(0, 9, 27, 0.28);
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 800;
+  gap: 0.55rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  min-height: 52px;
+  padding: 0.75rem 1rem 0.75rem 0.85rem;
+  position: fixed;
+  right: 1.35rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 220ms var(--motion-ease), box-shadow 220ms var(--motion-ease), background 220ms var(--motion-ease);
+  z-index: 70;
+}
+
+.whatsapp-fab:hover {
+  background: #168c46;
+  box-shadow: 0 26px 65px rgba(0, 9, 27, 0.34);
+  transform: translateY(-3px);
+}
+
+body:has(.modal-backdrop) .whatsapp-fab {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+}
+
+.whatsapp-fab svg {
+  fill: currentColor;
+  height: 26px;
+  width: 26px;
+}
+
 .modal-backdrop {
   align-items: center;
   animation: fadeIn 180ms ease both;
-  background: rgba(0, 9, 27, 0.52);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 9, 27, 0.58);
   display: flex;
   inset: 0;
   justify-content: center;
-  padding: 1rem;
+  overflow-y: auto;
+  padding: clamp(1rem, 4vw, 2rem);
   position: fixed;
   z-index: 90;
 }
 
 .modal {
   animation: modalIn 260ms var(--motion-ease) both;
+  background: rgba(255, 255, 255, 0.97);
   border-radius: var(--radius-lg);
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1fr);
   max-height: min(92vh, 820px);
-  max-width: 620px;
+  max-width: 920px;
   overflow: auto;
-  padding: clamp(1.4rem, 4vw, 2rem);
+  padding: clamp(1rem, 2.5vw, 1.35rem);
   position: relative;
-  width: min(100%, 620px);
+  width: min(100%, 920px);
+}
+
+.modal-intro {
+  background:
+    linear-gradient(145deg, rgba(0, 32, 70, 0.95), rgba(0, 9, 27, 0.98)),
+    radial-gradient(circle at 18% 16%, rgba(204, 167, 48, 0.26), transparent 34%);
+  border-radius: var(--radius);
+  color: #fff;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.2rem, 3vw, 1.65rem);
+}
+
+.modal-intro .eyebrow,
+.modal-intro h2,
+.modal-intro p {
+  color: #fff;
+}
+
+.modal-intro h2 {
+  font-size: clamp(2.1rem, 5vw, 3.3rem);
+  line-height: 0.95;
+}
+
+.modal-intro p {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 1rem;
+}
+
+.modal-highlights {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
+.modal-highlights span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.86);
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 800;
+  gap: 0.6rem;
+  padding: 0.72rem;
+}
+
+.modal-highlights .material-symbols-outlined {
+  color: var(--gold);
+}
+
+.modal-form-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 45px rgba(0, 32, 70, 0.08);
+  padding: clamp(1.1rem, 3vw, 1.45rem);
 }
 
 .modal .inquiry-form {
   border: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   box-shadow: none;
-  margin-top: 1rem;
+  gap: 1rem;
+  margin: 0;
   padding: 0;
+}
+
+.modal .inquiry-form label:nth-child(3),
+.modal .inquiry-form label:nth-child(4),
+.modal .inquiry-form button {
+  grid-column: 1 / -1;
+}
+
+.modal .inquiry-form textarea {
+  min-height: 110px;
 }
 
 .modal-close {
   align-items: center;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--navy-ink);
   display: flex;
-  height: 40px;
+  height: 42px;
   justify-content: center;
   position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 40px;
+  right: 1.05rem;
+  top: 1.05rem;
+  width: 42px;
+  z-index: 3;
+}
+
+.modal-close .material-symbols-outlined {
+  color: var(--navy-ink);
 }
 
 .toast {
@@ -2034,6 +2160,15 @@ textarea:focus {
   .filters {
     position: static;
   }
+
+  .modal {
+    grid-template-columns: 1fr;
+    width: min(100%, 720px);
+  }
+
+  .modal-intro {
+    padding-right: 4rem;
+  }
 }
 
 @media (max-width: 680px) {
@@ -2058,6 +2193,80 @@ textarea:focus {
   .newsletter-form,
   .footer-form div {
     flex-direction: column;
+  }
+
+  .whatsapp-fab {
+    bottom: 1rem;
+    gap: 0;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0;
+    right: 1rem;
+    width: 52px;
+  }
+
+  .whatsapp-fab span {
+    display: none;
+  }
+
+  .modal-backdrop {
+    align-items: flex-start;
+    padding: 0.75rem;
+  }
+
+  .modal {
+    border-radius: var(--radius);
+    max-height: calc(100vh - 1.5rem);
+    padding: 0.7rem;
+  }
+
+  .modal-intro {
+    gap: 0.72rem;
+    padding: 0.95rem;
+    padding-right: 3.7rem;
+  }
+
+  .modal-intro h2 {
+    font-size: 1.72rem;
+    line-height: 1;
+  }
+
+  .modal-intro p {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .modal-highlights {
+    gap: 0.45rem;
+  }
+
+  .modal-highlights span {
+    font-size: 0.76rem;
+    padding: 0.48rem;
+  }
+
+  .modal-highlights .material-symbols-outlined {
+    font-size: 1rem;
+  }
+
+  .modal-form-panel {
+    padding: 0.85rem;
+  }
+
+  .modal .inquiry-form {
+    gap: 0.72rem;
+    grid-template-columns: 1fr;
+  }
+
+  .modal .inquiry-form textarea {
+    min-height: 84px;
+  }
+
+  .modal input,
+  .modal select,
+  .modal textarea {
+    min-height: 42px;
+    padding: 0.64rem 0.75rem;
   }
 
   .delivery-copy h2 {
