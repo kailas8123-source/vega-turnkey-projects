@@ -2,5 +2,11 @@
   "buildCommand": null,
   "cleanUrls": true,
   "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/assets/(.*)",
+      "destination": "/public/assets/$1"
+    }
+  ],
   "trailingSlash": false
 }
