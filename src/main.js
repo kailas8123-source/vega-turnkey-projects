@@ -35,7 +35,7 @@ const images = {
   sceneSafety: "/assets/gds/safety-ppe-scene.svg",
 };
 
-const coverageCities = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain", "GCC dispatch"];
+const coverageCities = ["UAE", "Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "GCC", "Oman", "Qatar", "Bahrain", "Kuwait", "Saudi Arabia", "Nigeria"];
 
 const navItems = [
   ["catalog", "Products"],
@@ -472,6 +472,89 @@ function blogPreview() {
   `;
 }
 
+function deliveryVector() {
+  return `
+    <svg class="coverage-vector" viewBox="0 0 720 440" role="img" aria-label="Stylised UAE and GCC delivery route illustration">
+      <defs>
+        <linearGradient id="coverageSky" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#ffffff" stop-opacity="0.95" />
+          <stop offset="1" stop-color="#f3f4f5" stop-opacity="0.82" />
+        </linearGradient>
+        <linearGradient id="coverageRoute" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#cca730" />
+          <stop offset="0.52" stop-color="#00843d" />
+          <stop offset="1" stop-color="#002046" />
+        </linearGradient>
+      </defs>
+      <rect x="18" y="18" width="684" height="404" rx="44" fill="url(#coverageSky)" />
+      <path d="M74 338 C164 246 230 270 307 198 C374 136 458 152 541 104 C590 75 638 77 672 48" fill="none" stroke="url(#coverageRoute)" stroke-width="8" stroke-linecap="round" stroke-dasharray="18 18" />
+      <path d="M92 346h500" stroke="#c4c6cf" stroke-width="2" stroke-linecap="round" />
+      <g fill="#002046" opacity="0.16">
+        <path d="M132 246h34v100h-34zM178 214h42v132h-42zM234 268h58v78h-58zM305 238h34v108h-34zM350 186h52v160h-52zM415 264h64v82h-64z" />
+        <path d="M524 130c26 42 42 86 42 132v84h-32v-74c0-40-12-79-34-117l24-25Z" />
+        <path d="M591 178h30v168h-30zM631 234h24v112h-24z" />
+      </g>
+      <g class="coverage-marker" transform="translate(118 310)">
+        <circle r="19" />
+        <text x="0" y="5">DXB</text>
+      </g>
+      <g class="coverage-marker" transform="translate(276 220)">
+        <circle r="19" />
+        <text x="0" y="5">UAE</text>
+      </g>
+      <g class="coverage-marker gold" transform="translate(458 152)">
+        <circle r="19" />
+        <text x="0" y="5">GCC</text>
+      </g>
+      <g class="coverage-marker" transform="translate(626 82)">
+        <circle r="19" />
+        <text x="0" y="5">NG</text>
+      </g>
+      <g class="coverage-plane" transform="translate(506 108) rotate(-18)">
+        <path d="M0 14 72 0 50 19l12 25-27-18-21 19 5-27L0 14Z" />
+      </g>
+      <g class="coverage-truck" transform="translate(128 330)">
+        <rect x="0" y="-26" width="72" height="36" rx="8" />
+        <rect x="72" y="-18" width="34" height="28" rx="6" />
+        <circle cx="24" cy="16" r="9" />
+        <circle cx="82" cy="16" r="9" />
+      </g>
+    </svg>
+  `;
+}
+
+function deliveryCoverageSection() {
+  const headline = "We supply all across UAE, Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, GCC, Oman, Qatar, Bahrain, Kuwait, Saudi Arabia, Nigeria";
+  return `
+    <section class="section-space delivery-coverage">
+      <div class="container delivery-shell">
+        <div class="delivery-hero">
+          <div class="delivery-copy">
+            <span class="eyebrow gold">Delivery Footprint</span>
+            <h2>${headline}</h2>
+            <p>From Dubai office coordination and Sharjah warehouse dispatch to GCC and international project supply, Vega keeps high-volume accommodation, hospitality, safety, and crowd-control orders moving.</p>
+          </div>
+          <div class="delivery-art glass-card">
+            ${deliveryVector()}
+          </div>
+        </div>
+        <div class="delivery-location-grid">
+          ${coverageCities.map((city, index) => `<span class="delivery-location ${index < 2 ? "major" : ""}">${city}</span>`).join("")}
+        </div>
+        <div class="catalog-family-strip">
+          <div>
+            <span class="eyebrow">Official Catalogue Families</span>
+            <strong>Items stocked for fast UAE and GCC project dispatch.</strong>
+          </div>
+          <div class="catalog-family-grid">
+            ${categories.map((item) => `<article><span>${icon(item.icon)}</span><h3>${item.title}</h3><small>${item.items.slice(0, 3).join(" / ")}</small></article>`).join("")}
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function contactSection() {
   return `
     <section class="section-space contact-section" id="contact">
@@ -514,7 +597,7 @@ function inquiryForm(buttonText = "Submit") {
 }
 
 function homePage() {
-  return `${hero()}${stats()}${uaeSupplyBand()}${homeCategories()}${whyVega()}${processPreview()}${blogPreview()}${testimonial()}${contactSection()}`;
+  return `${hero()}${stats()}${uaeSupplyBand()}${homeCategories()}${whyVega()}${processPreview()}${blogPreview()}${testimonial()}${deliveryCoverageSection()}${contactSection()}`;
 }
 
 function catalogPage() {
@@ -785,7 +868,8 @@ function routeMarkup() {
 }
 
 function render() {
-  document.getElementById("app").innerHTML = `${header()}<main>${routeMarkup()}</main>${footer()}${modal()}${notice()}`;
+  const routeCoverage = state.route === "home" ? "" : deliveryCoverageSection();
+  document.getElementById("app").innerHTML = `${header()}<main>${routeMarkup()}${routeCoverage}</main>${footer()}${modal()}${notice()}`;
   updateMeta();
   enhanceMotion();
   bindEvents();
@@ -841,6 +925,11 @@ function enhanceMotion() {
     ".featured-grid > *",
     ".article-card",
     ".blog-preview-grid",
+    ".delivery-copy",
+    ".delivery-art",
+    ".delivery-location",
+    ".catalog-family-strip",
+    ".catalog-family-grid > *",
     ".newsletter",
     ".footer-grid > *",
   ].join(","));
