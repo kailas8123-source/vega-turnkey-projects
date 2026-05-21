@@ -20,7 +20,7 @@ public/assets/vega/references/
 
 The site uses the Vega visual system from the template: Josefin Sans typography, paper/light surface palette, deep navy actions, fine draft-line borders, glassmorphic cards, and architectural product imagery. The content integrates the supplied UAE/GCC SEO terms, real contact details, and product category descriptions from the redesign strategy.
 
-Official GDS-UAE logo, product category photos, service icons, catalogue previews, enhanced practical product-scene vectors, image-generated hyperrealistic product scenes, and Vega star favicon assets were mirrored into:
+Official GDS-UAE logo, product category photos, service icons, partner logos, catalogue previews, enhanced practical product-scene vectors, image-generated hyperrealistic product scenes, and Vega star favicon assets were mirrored into:
 
 ```text
 assets/gds/

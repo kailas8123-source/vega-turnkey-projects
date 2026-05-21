@@ -143,6 +143,40 @@ const values = [
   ["speed", "Efficiency", "Streamlined product selection, supply, delivery, and installation for large-volume orders."],
 ];
 
+const partnerLogos = [
+  "Workland",
+  "Zojirushi",
+  "Windsor",
+  "Victorinox",
+  "Vaultex",
+  "Tramontina",
+  "Tefal",
+  "Sunnex",
+  "Sola",
+  "Sanford",
+  "Rocklander",
+  "Raj",
+  "Prestige",
+  "Preethi",
+  "Pradeep",
+  "Pasabahce",
+  "Optima",
+  "Nikai",
+  "Miller",
+  "Luminarc",
+  "Libbey",
+  "Gurallar",
+  "Geepas",
+  "Elekta",
+  "Cosmoplast",
+  "Burco",
+  "Braun",
+  "Arcoroc",
+].map((name) => ({
+  name,
+  image: `/assets/gds/partners/${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.png`,
+}));
+
 const articles = [
   {
     category: "Camp Furniture",
@@ -333,6 +367,39 @@ function uaeSupplyBand() {
             <img class="catalog-preview" src="${images.gdsCatalog1}" alt="Vega product catalogue preview page one" />
             <img class="catalog-preview" src="${images.gdsCatalog2}" alt="Vega product catalogue preview page two" />
           </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function partnerLogoCard(partner, duplicate = false) {
+  return `
+    <article class="partner-logo-card" ${duplicate ? 'aria-hidden="true"' : ""}>
+      <img src="${partner.image}" alt="${duplicate ? "" : `${partner.name} partner logo`}" />
+    </article>
+  `;
+}
+
+function partnersSection() {
+  const logoSet = partnerLogos.map((partner) => partnerLogoCard(partner)).join("");
+  const duplicateSet = partnerLogos.map((partner) => partnerLogoCard(partner, true)).join("");
+
+  return `
+    <section class="section-space partners-section">
+      <div class="container">
+        <div class="section-head partners-head">
+          <div>
+            <span class="eyebrow gold">Our Partners</span>
+            <h2>Global product brands represented across the GDS-UAE catalogue.</h2>
+          </div>
+          <p class="section-summary">Trusted supply relationships for hospitality, catering, facility management, staff accommodation, safety, and project procurement.</p>
+        </div>
+      </div>
+      <div class="partner-marquee" role="list" aria-label="GDS-UAE partner logos">
+        <div class="partner-track">
+          ${logoSet}
+          ${duplicateSet}
         </div>
       </div>
     </section>
@@ -597,7 +664,7 @@ function inquiryForm(buttonText = "Submit") {
 }
 
 function homePage() {
-  return `${hero()}${stats()}${uaeSupplyBand()}${homeCategories()}${whyVega()}${processPreview()}${blogPreview()}${testimonial()}${deliveryCoverageSection()}${contactSection()}`;
+  return `${hero()}${stats()}${uaeSupplyBand()}${partnersSection()}${homeCategories()}${whyVega()}${processPreview()}${blogPreview()}${testimonial()}${deliveryCoverageSection()}${contactSection()}`;
 }
 
 function catalogPage() {
@@ -941,6 +1008,8 @@ function enhanceMotion() {
     ".uae-copy",
     ".source-panel",
     ".uae-chip",
+    ".partners-head",
+    ".partner-logo-card",
     ".gds-item-card",
     ".process-grid",
     ".quote-grid",
