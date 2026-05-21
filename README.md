@@ -7,7 +7,7 @@ A premium light-mode corporate website built from the supplied Vega template ref
 - Responsive home page with SEO-focused hero copy, supplier proof points, product categories, service process, testimonials, and project inquiry form.
 - Product catalog route with category filters for camp furniture, queue systems, waste bins, hospitality, and safety/PPE.
 - Mission and values route with GDS-UAE positioning, mission, vision, values, and service advantages.
-- Insights route with the strategy's mattress, recycling-bin, stanchion, and procurement blog topics.
+- Blog route with five procurement articles for camp furniture, waste bins, queue systems, hospitality equipment, and safety/PPE.
 - Working mobile navigation, quote modal, form confirmation toast, and hash-based routing.
 
 ## Asset Source
@@ -20,7 +20,7 @@ public/assets/vega/references/
 
 The site uses the Vega visual system from the template: Josefin Sans typography, paper/light surface palette, deep navy actions, fine draft-line borders, glassmorphic cards, and architectural product imagery. The content integrates the supplied UAE/GCC SEO terms, real contact details, and product category descriptions from the redesign strategy.
 
-Official GDS-UAE logo, product category photos, service icons, and catalogue previews were mirrored into:
+Official GDS-UAE logo, product category photos, service icons, catalogue previews, and enhanced practical product-scene vectors were mirrored into:
 
 ```text
 assets/gds/

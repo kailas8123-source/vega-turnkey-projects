@@ -449,7 +449,8 @@ p {
 
 .stats-grid,
 .values-grid,
-.article-grid {
+.article-grid,
+.blog-preview-grid {
   display: grid;
   gap: var(--gutter);
 }
@@ -1072,6 +1073,11 @@ textarea:focus {
   padding: clamp(1rem, 3vw, 1.5rem);
 }
 
+.source-product-image img[src$=".svg"] {
+  object-fit: cover;
+  padding: 0;
+}
+
 .product-copy {
   display: flex;
   flex-direction: column;
@@ -1272,8 +1278,17 @@ textarea:focus {
   color: #fff;
 }
 
+.blog-preview-section {
+  background: #ffffff;
+  border-block: 1px solid var(--line);
+}
+
+.blog-preview-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .article-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .article-card {
@@ -1628,6 +1643,7 @@ textarea:focus {
   .stats-grid,
   .values-grid,
   .article-grid,
+  .blog-preview-grid,
   .two-panel,
   .feature-grid,
   .quick-category-grid,
@@ -1699,6 +1715,7 @@ textarea:focus {
   .stats-grid,
   .values-grid,
   .article-grid,
+  .blog-preview-grid,
   .two-panel,
   .feature-grid,
   .quick-category-grid,

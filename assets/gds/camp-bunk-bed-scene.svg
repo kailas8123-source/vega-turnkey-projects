@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-label="GCC labour camp bunk bed and locker setup">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e8edf3"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3f7"/>
+      <stop offset="0.46" stop-color="#9aa8b5"/>
+      <stop offset="1" stop-color="#536271"/>
+    </linearGradient>
+    <linearGradient id="mattress" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d9e2ea"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="28" stdDeviation="26" flood-color="#0b1830" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="820" rx="42" fill="#f6f8fb"/>
+  <path d="M0 0h1200v560H0z" fill="url(#wall)"/>
+  <path d="M0 560h1200v260H0z" fill="#dce4eb"/>
+  <path d="M0 560h1200" stroke="#c6d0da" stroke-width="4"/>
+  <g opacity="0.28" stroke="#b6c2ce" stroke-width="2">
+    <path d="M70 610h1060M55 682h1090M30 754h1140"/>
+    <path d="M160 560v260M310 560v260M460 560v260M610 560v260M760 560v260M910 560v260M1060 560v260"/>
+  </g>
+  <g transform="translate(178 150)" filter="url(#shadow)">
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="42" width="566" height="76" rx="18" fill="url(#mattress)" stroke="#bac7d2" stroke-width="5"/>
+      <rect x="0" y="322" width="566" height="76" rx="18" fill="url(#mattress)" stroke="#bac7d2" stroke-width="5"/>
+      <path d="M12 108h542M12 388h542" stroke="url(#metal)" stroke-width="26"/>
+      <path d="M28 0v540M538 0v540M228 0v540M345 0v540" stroke="url(#metal)" stroke-width="24"/>
+      <path d="M30 26h506M30 510h506" stroke="#687789" stroke-width="16"/>
+      <path d="M582 112h100M582 150h100M582 188h100M582 226h100M582 264h100M582 302h100M582 340h100M582 378h100" stroke="url(#metal)" stroke-width="13"/>
+      <path d="M591 92v335M674 92v335" stroke="#667586" stroke-width="14"/>
+      <path d="M48 400h152v55H48zM48 118h152v55H48z" fill="#eef4f8" stroke="#b8c4ce" stroke-width="4"/>
+      <path d="M228 400h240v55H228zM228 118h240v55H228z" fill="#eef4f8" stroke="#b8c4ce" stroke-width="4"/>
+    </g>
+  </g>
+  <g transform="translate(815 214)" filter="url(#shadow)">
+    <rect x="0" y="0" width="220" height="410" rx="16" fill="#eef2f5" stroke="#9aa8b5" stroke-width="6"/>
+    <path d="M110 0v410M0 82h220M0 164h220M0 246h220M0 328h220" stroke="#c6d0da" stroke-width="4"/>
+    <circle cx="92" cy="124" r="7" fill="#516173"/>
+    <circle cx="128" cy="124" r="7" fill="#516173"/>
+    <circle cx="92" cy="288" r="7" fill="#516173"/>
+    <circle cx="128" cy="288" r="7" fill="#516173"/>
+    <path d="M24 24h72M124 24h72" stroke="#b6c2ce" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(76 76)">
+    <rect width="300" height="72" rx="10" fill="#001b3e"/>
+    <text x="24" y="32" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700">GCC CAMP FURNITURE</text>
+    <text x="24" y="55" fill="#f5d36b" font-family="Arial, sans-serif" font-size="15" font-weight="700">Bunk beds, lockers, mattresses</text>
+  </g>
+</svg>

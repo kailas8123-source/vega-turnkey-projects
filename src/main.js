@@ -28,6 +28,11 @@ const images = {
   gdsQuality: "/assets/gds/quality.png",
   gdsDelivery: "/assets/gds/delivery.png",
   gdsCommitment: "/assets/gds/commitment.png",
+  sceneCamp: "/assets/gds/camp-bunk-bed-scene.svg",
+  sceneWaste: "/assets/gds/waste-bin-scene.svg",
+  sceneQueue: "/assets/gds/queue-barrier-scene.svg",
+  sceneHospitality: "/assets/gds/hospitality-equipment-scene.svg",
+  sceneSafety: "/assets/gds/safety-ppe-scene.svg",
 };
 
 const coverageCities = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain", "GCC dispatch"];
@@ -36,7 +41,7 @@ const navItems = [
   ["catalog", "Products"],
   ["mission", "About Us"],
   ["catalog", "Safety & PPE", "Safety Equipment"],
-  ["insights", "Insights"],
+  ["blog", "Blog"],
 ];
 
 const categories = [
@@ -47,7 +52,8 @@ const categories = [
     icon: "deck",
     material: "Camp Furniture",
     image: images.camp,
-    sourceImage: images.gdsBunkBeds,
+    sourceImage: images.sceneCamp,
+    referenceImage: images.gdsBunkBeds,
     description:
       "A complete range of staff accommodation furniture in Dubai, built for durability, comfort, and fast deployment across UAE and GCC labour camps.",
     points: ["Steel and wooden bunk beds with anti-rust finishes", "Medicated mattresses, bedding, pillows, and linens", "Steel lockers, cabinets, office furniture, and appliances"],
@@ -62,7 +68,8 @@ const categories = [
     icon: "stadium",
     material: "Queue Systems",
     image: images.queue,
-    sourceImage: images.gdsQueue,
+    sourceImage: images.sceneQueue,
+    referenceImage: images.gdsQueue,
     description:
       "Queue barriers, VIP poles, rope barriers, flag poles, sign boards, and information stands for events, retail, hotels, and public venues.",
     points: ["Retractable barriers and VIP posts in multiple finishes", "Indoor and outdoor flag poles in aluminium and steel", "Police barriers, traffic barriers, and guided signage"],
@@ -77,7 +84,8 @@ const categories = [
     icon: "delete",
     material: "Waste Bins",
     image: images.waste,
-    sourceImage: images.gdsWasteBins,
+    sourceImage: images.sceneWaste,
+    referenceImage: images.gdsWasteBins,
     description:
       "Indoor and outdoor waste bins, stainless-steel bins, plastic bins, recycling bins, wooden bins, and pole ashtrays for clean, efficient premises.",
     points: ["Polished stainless-steel bins for offices and hotel lobbies", "Colour-coded recycling bins with separate compartments", "Outdoor public-space bins with durable easy-clean bodies"],
@@ -92,7 +100,8 @@ const categories = [
     icon: "event",
     material: "Hospitality",
     image: images.events,
-    sourceImage: images.gdsCatalog1,
+    sourceImage: images.sceneHospitality,
+    referenceImage: images.gdsCatalog1,
     description:
       "Premium hotel equipment and hospitality supplies for furnished apartments, banquet venues, resorts, and event operators.",
     points: ["Rollaway beds, foldable beds, bellman trolleys, banquet tables, and chairs", "Bed and bath linens, towels, duvet covers, and hotel accessories", "Food serving trays, catering equipment, electronics, and housekeeping carts"],
@@ -107,7 +116,8 @@ const categories = [
     icon: "health_and_safety",
     material: "Safety Equipment",
     image: images.logistics,
-    sourceImage: images.gdsCatalog2,
+    sourceImage: images.sceneSafety,
+    referenceImage: images.gdsCatalog2,
     description:
       "Complete solutions for hotel staff accommodation, labour camps, executive housing, hostels, construction sites, and public events.",
     points: ["Safety shoes, helmets, gloves, and high-visibility clothing", "First-aid kits, safety gadgets, and workplace compliance essentials", "Road safety barriers, barricades, and traffic control equipment"],
@@ -117,11 +127,11 @@ const categories = [
   },
 ];
 
-const gdsProductGroups = categories.map(({ title, tag, items, sourceImage }) => ({
+const gdsProductGroups = categories.map(({ title, tag, items, referenceImage, sourceImage }) => ({
   title,
   tag,
   items,
-  image: sourceImage,
+  image: referenceImage || sourceImage,
 }));
 
 const values = [
@@ -135,36 +145,44 @@ const values = [
 
 const articles = [
   {
-    category: "Mattresses",
-    title: "Sleep Better Tonight: Medicated Mattress That Improves Your Sleep Quality",
-    image: images.gdsBunkBeds,
+    category: "Camp Furniture",
+    title: "How to Specify Bunk Beds and Lockers for GCC Labour Camps",
+    image: images.sceneCamp,
     read: "7 min read",
     summary:
-      "How medicated orthopedic mattresses distribute weight evenly, support spinal alignment, and reduce pressure on neck, hips, and shoulders.",
+      "A practical checklist for bed frame strength, anti-rust coating, mattress sizing, locker placement, and delivery planning for high-occupancy staff accommodation.",
   },
   {
-    category: "Sustainability",
-    title: "The Essential Role of Recycling Bins in Waste Management",
-    image: images.gdsWasteBins,
+    category: "Waste Management",
+    title: "Choosing the Right Waste and Recycling Bins for UAE Facilities",
+    image: images.sceneWaste,
     read: "6 min read",
     summary:
-      "Why colour-coded recycling bins simplify waste separation, encourage reuse, and reduce environmental impact across busy facilities.",
+      "How to select stainless-steel, plastic, wooden, outdoor, and colour-coded recycling bins for offices, hotels, public spaces, and camp facilities.",
   },
   {
     category: "Crowd Control",
-    title: "The Ultimate Guide to Crowd Control Stanchions: Types & Uses",
-    image: images.gdsQueue,
+    title: "Queue Barrier Planning for Hotels, Events, and Public Venues",
+    image: images.sceneQueue,
     read: "4 min read",
     summary:
-      "A practical guide to retractable barriers, rope barriers, VIP stanchions, queue barriers, and event safety applications.",
+      "A practical guide to retractable barriers, VIP rope poles, police barriers, flag poles, and signage layouts that keep guest movement clear.",
   },
   {
-    category: "Procurement",
-    title: "Choosing Office Furniture and Accommodation Supply for UAE Projects",
-    image: images.gdsCatalog1,
+    category: "Hospitality",
+    title: "Hotel and Event Equipment Procurement for Fast Turnarounds",
+    image: images.sceneHospitality,
     read: "8 min read",
     summary:
-      "How to balance cost, durability, availability, and installation timing when ordering high-volume project furniture.",
+      "What to prepare before ordering rollaway beds, bellman trolleys, banquet furniture, linens, service trays, and housekeeping equipment.",
+  },
+  {
+    category: "Safety & PPE",
+    title: "Road Safety and PPE Essentials for UAE Site Mobilisation",
+    image: images.sceneSafety,
+    read: "5 min read",
+    summary:
+      "A procurement guide for safety shoes, helmets, gloves, first-aid kits, cones, barricades, and road barriers before teams arrive on site.",
   },
 ];
 
@@ -181,6 +199,7 @@ const metaByRoute = {
   catalog: "Browse premium bunk beds, mattresses, queue barriers, flag poles, waste bins, recycling bins, hotel equipment, linens, PPE and road safety barriers from Vega Turnkey Projects in Dubai.",
   mission: "Learn about Vega Turnkey Projects, also known as GDS-UAE, a Dubai-based importer and stockist with 15+ years of experience in labour-camp furniture, safety workwear and crowd control solutions.",
   insights: "Read Vega Turnkey insights on medicated mattresses, recycling bins, crowd control stanchions, hotel safety barriers and project furniture selection in the UAE.",
+  blog: "Read Vega Turnkey blog guides on GCC camp furniture, waste bins, queue barriers, hospitality equipment, safety PPE and UAE project procurement.",
 };
 
 const state = {
@@ -419,6 +438,25 @@ function testimonial() {
   `;
 }
 
+function blogPreview() {
+  return `
+    <section class="section-space blog-preview-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow gold">Project Blog</span>
+            <h2>Procurement notes for camps, venues, hotels, and UAE sites.</h2>
+          </div>
+          <button class="text-link" data-route="blog">Read All Posts ${icon("arrow_forward")}</button>
+        </div>
+        <div class="blog-preview-grid">
+          ${articles.map(articleCard).join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function contactSection() {
   return `
     <section class="section-space contact-section" id="contact">
@@ -461,7 +499,7 @@ function inquiryForm(buttonText = "Submit") {
 }
 
 function homePage() {
-  return `${hero()}${stats()}${uaeSupplyBand()}${homeCategories()}${whyVega()}${processPreview()}${testimonial()}${contactSection()}`;
+  return `${hero()}${stats()}${uaeSupplyBand()}${homeCategories()}${whyVega()}${processPreview()}${blogPreview()}${testimonial()}${contactSection()}`;
 }
 
 function catalogPage() {
@@ -593,7 +631,7 @@ function insightsPage() {
       <div class="container featured-grid">
         <div class="featured-image"><img src="${articles[0].image}" alt="${articles[0].title}" /></div>
         <div class="featured-copy">
-          <span class="eyebrow">Featured Intelligence</span>
+          <span class="eyebrow">Featured Blog</span>
           <h1>${articles[0].title}</h1>
           <p>${articles[0].summary}</p>
           <button class="primary-button">Read Perspective ${icon("arrow_right_alt")}</button>
@@ -603,8 +641,8 @@ function insightsPage() {
     <section class="section-space compact">
       <div class="container">
         <div class="section-head">
-          <div><span class="eyebrow gold">Latest Blogs</span><h2>Hospitality, safety, staff accommodation, and facility-management insights.</h2></div>
-          <div class="chip-row"><button>All</button><button>Mattresses</button><button>Recycling</button><button>Stanchions</button></div>
+          <div><span class="eyebrow gold">Latest Blog Posts</span><h2>Five practical guides for GCC procurement teams.</h2></div>
+          <div class="chip-row"><button>All</button><button>Camp</button><button>Waste</button><button>Events</button><button>Safety</button></div>
         </div>
         <div class="article-grid">
           ${articles.slice(1).map(articleCard).join("")}
@@ -640,7 +678,7 @@ function footer() {
       <div class="container footer-grid">
         <div><img class="footer-logo" src="${images.gdsLogo}" alt="The Vega Turnkey Projects LLC" /><strong>Vega Turnkey</strong><p>GDS-UAE supplier of labour-camp furniture, bunk beds, staff accommodation equipment, hotel supplies, queue barriers, flag poles, waste bins, PPE, and safety equipment.</p></div>
         <div><span>Products</span><button data-route="catalog">Camp Furniture</button><button data-route="catalog">Queue Barriers</button><button data-route="catalog">Waste Bins</button><button data-route="catalog">Hotels & Events</button><button data-route="catalog">Safety & PPE</button></div>
-        <div><span>Company</span><button data-route="mission">About Us</button><button data-route="insights">Insights</button><button data-open-quote>Contact Support</button></div>
+        <div><span>Company</span><button data-route="mission">About Us</button><button data-route="blog">Blog</button><button data-open-quote>Contact Support</button></div>
         <form class="footer-form" data-form><span>Project Updates</span><div><input aria-label="Email" required type="email" placeholder="Email address" /><button>${icon("arrow_forward")}</button></div></form>
       </div>
       <div class="container footer-bottom"><span>(c) 2026 Vega Turnkey Projects LLC. sales@thevegauae.com</span><span>Privacy Policy - Terms of Service</span></div>
@@ -669,7 +707,7 @@ function notice() {
 function routeMarkup() {
   if (state.route === "catalog") return catalogPage();
   if (state.route === "mission") return missionPage();
-  if (state.route === "insights") return insightsPage();
+  if (state.route === "insights" || state.route === "blog") return insightsPage();
   return homePage();
 }
 
@@ -682,9 +720,10 @@ function render() {
 
 function updateMeta() {
   const route = state.route || "home";
+  const label = route === "blog" ? "Blog" : `${route[0].toUpperCase()}${route.slice(1)}`;
   document.title = route === "home"
     ? "Vega Turnkey Projects | Labour Camp Furniture Supplier in UAE"
-    : `Vega Turnkey Projects | ${route[0].toUpperCase()}${route.slice(1)}`;
+    : `Vega Turnkey Projects | ${label}`;
   const description = document.querySelector('meta[name="description"]');
   if (description) {
     description.setAttribute("content", metaByRoute[route] || metaByRoute.home);
@@ -728,6 +767,7 @@ function enhanceMotion() {
     ".advantage-grid > *",
     ".featured-grid > *",
     ".article-card",
+    ".blog-preview-grid",
     ".newsletter",
     ".footer-grid > *",
   ].join(","));
@@ -751,7 +791,14 @@ function enhanceMotion() {
     });
   }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
 
-  revealTargets.forEach((element) => revealObserver.observe(element));
+  revealTargets.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+      element.classList.add("is-visible");
+      return;
+    }
+    revealObserver.observe(element);
+  });
 }
 
 function updateScrollProgress() {
